@@ -43,7 +43,7 @@ class DivineAttributeObjective(nn.Module):
         if self.attr_type == "mercy":
             # Ar‑Rahman: minimize negative outcomes (compassion)
             # For classification, this could be minimizing false negatives in critical cases
-            loss = nn.functional.cross_entropy(logits, targets, reduction='mean')
+            loss = nn.functional.cross_entropy(logits, targets, reduction="mean")
             return self.weight * loss
 
         elif self.attr_type == "justice":
@@ -54,14 +54,16 @@ class DivineAttributeObjective(nn.Module):
                 # Assume model is a classifier
                 preds = torch.argmax(logits, dim=1)
                 # This is stub; real implementation would group by protected attribute
-                fairness_penalty = (preds.float().var())  # encourage uniform preds? doesn't make sense
+                fairness_penalty = (
+                    preds.float().var()
+                )  # encourage uniform preds? doesn't make sense
                 return self.weight * fairness_penalty
             else:
                 return torch.tensor(0.0, device=logits.device)
 
         elif self.attr_type == "wisdom":
             # Al‑Hakim: maximize accuracy minus uncertainty
-            loss = nn.functional.cross_entropy(logits, targets, reduction='mean')
+            loss = nn.functional.cross_entropy(logits, targets, reduction="mean")
             # Add entropy penalty to avoid over‑confidence?
             probs = torch.softmax(logits, dim=1)
             entropy = -(probs * torch.log(probs + 1e-10)).sum(dim=1).mean()
@@ -140,7 +142,9 @@ class DivineNamesOptimizer:
             weights = torch.softmax(self.raw_weights, dim=0)
         else:
             # Use fixed weights from each attribute
-            weights = torch.tensor([attr.weight for attr in self.attributes], device=losses_tensor.device)
+            weights = torch.tensor(
+                [attr.weight for attr in self.attributes], device=losses_tensor.device
+            )
 
         total = (weights * losses_tensor).sum()
         return total, weights, losses_tensor

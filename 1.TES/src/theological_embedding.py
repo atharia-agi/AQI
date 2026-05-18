@@ -52,10 +52,7 @@ class TheologicalEmbedding(nn.Module):
         self.embeddings = nn.Embedding(vocab_size, embed_dim)
 
         # Ontological tier for each token (0–6). Initialize all to tier 3 (human) by default.
-        self.register_buffer(
-            "token_tiers",
-            torch.full((vocab_size,), 3, dtype=torch.long)
-        )
+        self.register_buffer("token_tiers", torch.full((vocab_size,), 3, dtype=torch.long))
         # Update tiers from provided mapping
         if tier_to_indices:
             for tier, indices in tier_to_indices.items():
@@ -102,7 +99,7 @@ class TheologicalEmbedding(nn.Module):
         # We want: for t1 > t2, E[norm|t1] > E[norm|t2]
         tier_norms = []
         for t in range(7):
-            mask = (self.token_tiers == t)
+            mask = self.token_tiers == t
             if mask.any():
                 tier_norms.append(norms[mask].mean())
             else:
@@ -157,7 +154,7 @@ def build_tier_mapping(data_path: str) -> Dict[int, List[int]]:
         }
     }
     """
-    with open(data_path, 'r', encoding='utf-8') as f:
+    with open(data_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     tiers = {}
     for tier_str, tokens in data["tiers"].items():

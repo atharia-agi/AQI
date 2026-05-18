@@ -20,6 +20,7 @@ from typing import Dict, List, Set, Tuple
 import json
 import datetime
 
+
 class SignNode:
     """Represents a single eschatological sign."""
 
@@ -30,7 +31,7 @@ class SignNode:
         prior_p_manifest: float,
         parents: List[str] = None,
         description: str = "",
-        hadith_ref: str = ""
+        hadith_ref: str = "",
     ):
         self.name = name
         self.category = category  # 'minor' or 'major'
@@ -42,6 +43,7 @@ class SignNode:
 
     def __repr__(self):
         return f"<Sign {self.name} (parents={self.parents})>"
+
 
 class ProphecyBayesNet:
     """
@@ -90,11 +92,7 @@ class ProphecyBayesNet:
             assignment[name] = np.random.random() < p_true
         return assignment
 
-    def update_posterior(
-        self,
-        observations: Dict[str, bool],
-        n_particles: int = 10000
-    ) -> float:
+    def update_posterior(self, observations: Dict[str, bool], n_particles: int = 10000) -> float:
         """
         Given observed signs (some True, some False), estimate the posterior
         probability that we are within the “last X years”. For demo, we compute
@@ -104,7 +102,7 @@ class ProphecyBayesNet:
         matches = 0
         total = 0
 
-        major_signs = [n for n, node in self.nodes.items() if node.category == 'major']
+        major_signs = [n for n, node in self.nodes.items() if node.category == "major"]
 
         for _ in range(n_particles):
             sample = self.sample_topology()
@@ -127,12 +125,14 @@ class ProphecyBayesNet:
             return 0.0
         return matches / total
 
+
 def build_current_events_mapper() -> Dict[str, callable]:
     """
     Returns a dict of sign → boolean function that checks current data.
     In a real implementation, these would query news APIs, social media stats, etc.
     For demo, we simulate deterministic functions or random.
     """
+
     def fake_check_trust_liars():
         # Simulate: “people will trust the liar” — just random for demo
         return np.random.random() < 0.3
@@ -149,14 +149,15 @@ def build_current_events_mapper() -> Dict[str, callable]:
         "occult_widespread": fake_check_occult,
     }
 
+
 def main():
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("  ESCHATOLOGICAL PREDICTIVE MODELING (EPM) DEMO")
     print("  Bayesian Tracking of the Signs of the Hour")
-    print("="*70 + "\n")
+    print("=" * 70 + "\n")
 
     # Build network from data file
-    with open("data/signatures_of_the_hour.json", 'r', encoding='utf-8') as f:
+    with open("data/signatures_of_the_hour.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
     net = ProphecyBayesNet()
@@ -169,7 +170,7 @@ def main():
             prior_p_manifest=sign["prior"],
             parents=sign.get("parents", []),
             description=sign["description"],
-            hadith_ref=sign["hadith_ref"]
+            hadith_ref=sign["hadith_ref"],
         )
         net.add_node(node)
 
@@ -200,6 +201,7 @@ def main():
         print("  ✅ Probability still low; continue normal operations.")
 
     print("\n✅ EPM operational: early warning system for civilizational risks.\n")
+
 
 if __name__ == "__main__":
     main()

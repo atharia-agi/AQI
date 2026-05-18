@@ -18,6 +18,7 @@ import random
 from typing import List, Dict, Tuple
 import numpy as np
 
+
 class DreamSymbolDictionary:
     """
     Maps symbols (objects, actions, colors, emotions) to their prophetic meanings.
@@ -25,11 +26,11 @@ class DreamSymbolDictionary:
     """
 
     def __init__(self, data_path: str):
-        with open(data_path, 'r', encoding='utf-8') as f:
+        with open(data_path, "r", encoding="utf-8") as f:
             self.data = json.load(f)
-        self.symbols = {s['symbol']: s for s in self.data['symbols']}
-        self.colors = {c['color']: c for c in self.data.get('colors', [])}
-        self.actions = {a['action']: a for a in self.data.get('actions', [])}
+        self.symbols = {s["symbol"]: s for s in self.data["symbols"]}
+        self.colors = {c["color"]: c for c in self.data.get("colors", [])}
+        self.actions = {a["action"]: a for a in self.data.get("actions", [])}
 
     def interpret(self, dream_desc: str) -> Dict:
         """
@@ -41,23 +42,27 @@ class DreamSymbolDictionary:
 
         for token in tokens:
             if token in self.symbols:
-                interpretations.append({
-                    "symbol": token,
-                    "meaning": self.symbols[token]["meaning"],
-                    "strength": self.symbols[token].get("strength", "medium"),
-                    "hadith_ref": self.symbols[token].get("hadith_ref", "")
-                })
+                interpretations.append(
+                    {
+                        "symbol": token,
+                        "meaning": self.symbols[token]["meaning"],
+                        "strength": self.symbols[token].get("strength", "medium"),
+                        "hadith_ref": self.symbols[token].get("hadith_ref", ""),
+                    }
+                )
             if token in self.actions:
-                interpretations.append({
-                    "action": token,
-                    "meaning": self.actions[token]["meaning"],
-                    "hadith_ref": self.actions[token].get("hadith_ref", "")
-                })
+                interpretations.append(
+                    {
+                        "action": token,
+                        "meaning": self.actions[token]["meaning"],
+                        "hadith_ref": self.actions[token].get("hadith_ref", ""),
+                    }
+                )
 
         return {
             "raw_input": dream_desc,
             "interpretations": interpretations,
-            "verdict": self.summarize(interpretations)
+            "verdict": self.summarize(interpretations),
         }
 
     def summarize(self, interpretations: List[Dict]) -> str:
@@ -66,6 +71,7 @@ class DreamSymbolDictionary:
         # Take the most significant (first or highest strength)
         top = interpretations[0]
         return f"{top['symbol'] if 'symbol' in top else top['action']} indicates {top['meaning']}."
+
 
 class DreamScriptGenerator:
     """
@@ -112,10 +118,10 @@ class DreamScriptGenerator:
             # Fill slots
             if i == 0:
                 fragment = t.format(A=sym, B=random.choice(self.goal_symbols[goal]), C="the truth")
-            elif i < length-1:
-                fragment = t.format(A=chosen[i-1], B=sym, C="your success")
+            elif i < length - 1:
+                fragment = t.format(A=chosen[i - 1], B=sym, C="your success")
             else:
-                fragment = t.format(A=chosen[i-1], B=sym, C="complete understanding")
+                fragment = t.format(A=chosen[i - 1], B=sym, C="complete understanding")
             scene.append(fragment)
 
         narrative = " ".join(scene)
@@ -124,14 +130,15 @@ class DreamScriptGenerator:
             "goal": goal,
             "symbols_used": chosen,
             "narrative": narrative,
-            "interpretation": f"This dream encodes the desired {goal} through prophetic symbols."
+            "interpretation": f"This dream encodes the desired {goal} through prophetic symbols.",
         }
 
+
 def main():
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("  PROPHETIC DREAM INTERPRETER (PDI‑GPT) DEMO")
     print("  Interpreting & Generating Dreams via Hadith Symbolism")
-    print("="*70 + "\n")
+    print("=" * 70 + "\n")
 
     # Initialize dictionary
     sym_dict = DreamSymbolDictionary("data/dream_symbols.json")
@@ -141,7 +148,7 @@ def main():
     print("\n[Interpretation Mode]")
     test_dream = "I saw water and a key and felt peace"
     result = sym_dict.interpret(test_dream)
-    print(f"  Dream: \"{test_dream}\"")
+    print(f'  Dream: "{test_dream}"')
     print(f"  Symbols found: {[i['symbol'] for i in result['interpretations']]}")
     print(f"  Verdict: {result['verdict']}")
 
@@ -156,6 +163,6 @@ def main():
 
     print("\n✅ PDI‑GPT running: merge prophetic symbolism with AI generation.\n")
 
+
 if __name__ == "__main__":
     main()
-

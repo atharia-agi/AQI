@@ -5,9 +5,11 @@ Shows how to track signs of the Hour using Bayesian inference.
 """
 
 import sys
-sys.path.insert(0, 'src')
+
+sys.path.insert(0, "src")
 from prophecy_tracker import ProphecyBayesNet, SignNode
 import json
+
 
 def main():
     print("\n" + "=" * 70)
@@ -15,7 +17,7 @@ def main():
     print("  Bayesian Tracking of the Signs of the Hour")
     print("=" * 70 + "\n")
 
-    with open("data/signatures_of_the_hour.json", 'r', encoding='utf-8') as f:
+    with open("data/signatures_of_the_hour.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
     net = ProphecyBayesNet()

@@ -8,6 +8,7 @@ and unexpected outcomes.
 import numpy as np
 from src.causal_graph import NBCDGraph, DivineInterventionPrior
 
+
 def main():
     print("\n" + "=" * 70)
     print("  NASS-BASED CAUSAL DISCOVERY (NBCD) DEMO")
@@ -43,7 +44,9 @@ def main():
         if do_intervene:
             miracle_count += 1
 
-    print(f"  Generated {n_samples} observations; {miracle_count} included prayer intervention events.")
+    print(
+        f"  Generated {n_samples} observations; {miracle_count} included prayer intervention events."
+    )
 
     # Estimate posterior probability of divine intervention
     print("\n[Inference] Estimating divine intervention probability from data...")

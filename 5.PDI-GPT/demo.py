@@ -7,8 +7,10 @@ Uses a knowledge base of dream symbols from Hadith (Ibn Sirin etc.) to:
 """
 
 import sys
-sys.path.insert(0, 'src')
+
+sys.path.insert(0, "src")
 from dream_engine import DreamSymbolDictionary, DreamScriptGenerator
+
 
 def main():
     print("\n" + "=" * 70)

@@ -30,7 +30,7 @@ class DivineInterventionPrior:
         # Default intervention prior (log-odds) per edge type
         self.base_prior = -3.0  # log(0.05) — rare but possible
         self.edge_boost = {
-            "prayer": 2.0,      # Salat can change decree
+            "prayer": 2.0,  # Salat can change decree
             "dhikr": 1.5,
             "charity": 1.0,
             "dua": 1.8,
@@ -79,9 +79,7 @@ class NBCDGraph:
         return modifications
 
     def sample_observation(
-        self,
-        intervention_node: Optional[str] = None,
-        noise_std: float = 0.1
+        self, intervention_node: Optional[str] = None, noise_std: float = 0.1
     ) -> Dict[str, float]:
         """
         Sample a data point from the SCM. If intervention_node is provided,
@@ -124,7 +122,7 @@ class NBCDGraph:
         data: List[Dict[str, float]],
         intervention_node: str,
         target_node: str,
-        threshold: float = 3.0
+        threshold: float = 3.0,
     ) -> float:
         """
         Given observational data, estimate posterior probability that
@@ -137,7 +135,7 @@ class NBCDGraph:
             # Predict target from natural graph only (no intervention)
             # For demo: simply compute linear predictor ignoring intervention
             parents = list(self.G.predecessors(target_node))
-            pred = sum(self.G[p][target_node]['strength'] * obs.get(p, 0) for p in parents)
+            pred = sum(self.G[p][target_node]["strength"] * obs.get(p, 0) for p in parents)
             predictions.append(pred)
 
         residuals = np.array([obs[target_node] - pred for obs, pred in zip(data, predictions)])

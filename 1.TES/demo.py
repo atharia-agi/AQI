@@ -5,10 +5,12 @@ Shows how embeddings learn ontological hierarchy: Allah > Malaikat > Insan > Hai
 """
 
 import sys
-sys.path.insert(0, 'src')
+
+sys.path.insert(0, "src")
 import torch
 import json
 from theological_embedding import TheologicalEmbedding, build_tier_mapping
+
 
 def main():
     print("\n" + "=" * 60)
@@ -23,7 +25,7 @@ def main():
     print(f"Ontological tiers: {len(tier_map)} levels")
 
     # Build reverse lookup: token_id -> name
-    with open("data/asmaullah.json", 'r', encoding='utf-8') as f:
+    with open("data/asmaullah.json", "r", encoding="utf-8") as f:
         data = json.load(f)
     token_to_name = data["token_to_name"]
 

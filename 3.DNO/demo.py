@@ -7,11 +7,13 @@ fairness (justice), and compassion (mercy).
 """
 
 import sys
-sys.path.insert(0, 'src')
+
+sys.path.insert(0, "src")
 import torch
 import torch.nn as nn
 import json
 from names_optimizer import DivineNamesOptimizer, DEFAULT_ATTRIBUTES
+
 
 def synthetic_data(n=1000):
     """Create binary classification with sensitive attribute."""
@@ -21,12 +23,15 @@ def synthetic_data(n=1000):
     sensitive = (X[:, 0] > 0).long()
     return X, y, sensitive
 
+
 class SimpleClassifier(nn.Module):
     def __init__(self, input_dim=10, num_classes=2):
         super().__init__()
         self.fc = nn.Linear(input_dim, num_classes)
+
     def forward(self, x):
         return self.fc(x)
+
 
 def fairness_loss(logits, sensitive, y):
     """
@@ -38,6 +43,7 @@ def fairness_loss(logits, sensitive, y):
     prob_1 = (preds[sensitive == 1] == 1).float().mean()
     dp_diff = torch.abs(prob_0 - prob_1)
     return dp_diff
+
 
 def main():
     print("\n" + "=" * 70)
