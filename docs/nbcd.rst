@@ -1,59 +1,61 @@
 Nass-Based Causal Discovery (NBCD)
 ==================================
 
+Nass-Based Causal Discovery (NBCD) is a causal inference framework that incorporates a latent Divine Will node (D) into causal graphs, allowing for the modeling of both natural causality and Divine intervention.
+
 Overview
 --------
 
-Nass-Based Causal Discovery (NBCD) is a causal inference framework that incorporates the Islamic concept of *nass* (definitive textual evidence) as latent variables in causal graphs.
+Traditional causal discovery assumes all causality is natural. NBCD introduces:
 
-Key Features
-------------
-
-- Explicit modeling of Divine Will as a latent variable in causal graphs
-- Integration of *nass* as constraints on causal structure
-- Bayesian estimation of divine intervention probability from observational data
-- Compatible with standard causal discovery algorithms
+- **Divine Will Node (D)**: A latent variable representing Divine decree
+- **Nass-Based Priors**: Prior probabilities derived from Quranic text
+- **Causal Graphs with Divine Intervention**: Edges from D to any node
 
 Architecture
 ------------
 
-NBCD extends standard causal discovery by:
+The NBCD graph extends standard causal models:
 
-1. **Latent Divine Node**: Introduces a latent variable representing Divine Will
-2. **Textual Constraints**: Uses definitive religious texts to constrain causal structures
-3. **Bayesian Inference**: Computes posterior probability of divine intervention
-4. **Effect Decomposition**: Separates total effect into natural and supernatural components
+- Natural causes: X -> Y
+- Divine intervention: D -> Y
+- Combined: X -> Y <- D
+
+The DivineInterventionPrior class encodes Quranic knowledge about when Divine intervention is more likely.
 
 Usage
 -----
 
-Basic usage:
-
 .. code-block:: python
 
     import sys
-    sys.path.insert(0, '2.NBCD/src')
+    sys.path.insert(0, 'src')
     from causal_graph import NBCDGraph, DivineInterventionPrior
 
     graph = NBCDGraph()
-    graph.add_edge("salat_prayer", "heart_peace", 0.3, edge_type="prayer")
-    graph.add_edge("salat_prayer", "miraculous_outcome", 0.05, edge_type="prayer")
+    graph.add_node('prayer', 'outcome')
+    graph.add_divine_intervention('outcome')
+    graph.compute_causal_effect('prayer', 'outcome')
 
-    obs = graph.sample_observation(intervention_node="salat_prayer", noise_std=0.2)
-    p_divine = graph.estimate_divine_probability(
-        data, intervention_node="salat_prayer",
-        target_node="miraculous_outcome", threshold=2.5,
-    )
+API Reference
+-------------
 
-See the `NBCD README <../2.NBCD/README.md>`_ for more details.
+.. py:class:: NBCDGraph
 
-Theoretical Foundation
-----------------------
+   Main NBCD graph class.
 
-NBCD is grounded in Islamic theological concepts of *nass*, *kawniyyat*, *mi'jazaat*, and *qadar*.
+   .. py:method:: add_node(*nodes)
 
-References
-----------
+      Adds nodes to the graph.
 
-- Al-Ghazali. *Ihya Ulum al-Din*. Dar al-Ma'rifah.
-- Al-Razi, F. *Mafatih al-Ghayb*. Dar Ihya al-Turath al-Arabi.
+   .. py:method:: add_divine_intervention(target)
+
+      Adds a Divine intervention edge.
+
+   .. py:method:: compute_causal_effect(source, target)
+
+      Computes the causal effect between two nodes.
+
+.. py:class:: DivineInterventionPrior
+
+   Encodes Quranic knowledge about Divine intervention likelihood.

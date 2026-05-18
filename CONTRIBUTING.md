@@ -1,4 +1,4 @@
-# Contributing to Divine AI Suite
+# Contributing to AQI - Artificial Quranic Intelligence
 
 Thank you for your interest in contributing! This document provides guidelines and information for contributors.
 
@@ -29,19 +29,38 @@ Thank you for your interest in contributing! This document provides guidelines a
 ## Development Setup
 
 ```bash
-git clone https://github.com/yourorg/divine-ai-suite.git
-cd divine-ai-suite
+git clone git@github.com:atharia-agi/AQI.git
+cd AQI
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
-pre-commit install  # optional: run formatting hooks
 ```
 
 ---
 
 ## Project Structure
 
-Each project (1.TES, 2.NBCD, 3.DNO, 4.EPM, 5.PDI-GPT) follows this structure:
+AQI contains 6 pillars: Quranic Principles + 5 AI frameworks:
+
+```
+quranic_principles/  → Mathematical codes, scientific references, hidden patterns, literary devices, ontological hierarchy
+1.TES/               → Theological Embedding Space
+2.NBCD/              → Nass-Based Causal Discovery
+3.DNO/               → Divine Names Ontology
+4.EPM/               → Eschatological Predictive Modeling
+5.PDI-GPT/           → Prophetic Dream Interpreter
+research/            → Academic papers + Tawhid Unifier + Mizan Fairness
+docs/                → Sphinx documentation
+data_pipeline/       → Data loaders (Quran, Hadith, Tafsir)
+training/            → Training scripts with GPU support
+integration/         → AQI pipeline orchestrator
+evaluation/          → Framework-specific metrics
+api/                 → FastAPI server
+configs/             → YAML configuration files
+tests/               → Unit tests (32/32 PASS)
+```
+
+Each framework follows this structure:
 
 ```
 <project>/
@@ -49,7 +68,7 @@ Each project (1.TES, 2.NBCD, 3.DNO, 4.EPM, 5.PDI-GPT) follows this structure:
 │   ├── __init__.py
 │   └── <module>.py
 ├── data/         # JSON data files (small, versioned)
-├── tests/        # Unit tests (to be added)
+├── tests/        # Unit tests
 ├── demo.py       # Demonstration script
 └── README.md     # Project-specific details
 ```
@@ -58,12 +77,15 @@ Each project (1.TES, 2.NBCD, 3.DNO, 4.EPM, 5.PDI-GPT) follows this structure:
 
 ## Coding Standards
 
-- **Type hints:** Use for all function signatures.
-- **Docstrings:** Google style.
-- **Imports:** Use `isort` to sort (standard library, third‑party, local).
-- **Formatting:** `black (line length 100, see pyproject.toml)).
-- **Error handling:** Raise meaningful exceptions; avoid bare `except`.
-- **Logging:** Use `logging` module for debug/info messages in demos.
+- **Formatter:** Black (line length 100)
+- **Sorter:** isort (profile: black)
+- **Lint:** flake8 (critical errors only: E9, F63, F7, F82)
+- **Type hints:** Optional, not enforced
+- **Docstrings:** Google style
+- **Imports:** Use `isort` to sort (standard library, third-party, local)
+- **Error handling:** Raise meaningful exceptions; avoid bare `except`
+- **Print statements:** Use `[OK]`, `[FAIL]`, `[WARN]` prefixes. NO emojis.
+- **Encoding:** UTF-8 only. NO BOM. NO non-breaking hyphens or spaces.
 
 ---
 
@@ -74,7 +96,7 @@ These projects engage with religious texts and concepts. Contributors must:
 - Respect theological diversity; avoid claiming exclusive truth.
 - Clearly distinguish between *inspired computational models* and *religious doctrine*.
 - Cite sources accurately (Qur'an, hadith, scholarly works).
-- Include methodological caveats (e.g., over‑interpretation risks) in any publication.
+- Include methodological caveats (e.g., over-interpretation risks) in any publication.
 
 ---
 
@@ -83,9 +105,9 @@ These projects engage with religious texts and concepts. Contributors must:
 Follow conventional commits format:
 
 ```
-feat: add Mizan fairness regularizer
+feat: add Quranic Principles module
 fix: correct NBCD intervention sampling
-docs: update README with usage examples
+docs: update README with AQI branding
 test: add unit tests for TheologicalEmbedding
 ```
 
@@ -99,11 +121,10 @@ By contributing, you agree your contributions will be licensed under the MIT Lic
 
 ## Questions?
 
-Contact the maintainer: research@browseros.ai or open an issue.
+Open an issue on GitHub.
 
 ---
 
-*“Whoever treads a path in search of knowledge, Allah will make easy for him the path to Paradise.”* — Sahih Muslim 2699a
+"Whoever treads a path in search of knowledge, Allah will make easy for him the path to Paradise." — Sahih Muslim 2699a
 
-Happy coding! 🚀
-
+Happy coding!

@@ -1,8 +1,9 @@
 Introduction
 ============
 
-Welcome to the Divine AI Suite documentation. This suite comprises five revolutionary frameworks that integrate Islamic epistemology into artificial intelligence:
+Welcome to the AQI (Artificial Quranic Intelligence) documentation. This system comprises six pillars that integrate Quranic principles directly into AI architectures:
 
+0. Quranic Principles - The foundation
 1. Theological Embedding Space (TES)
 2. Nass-Based Causal Discovery (NBCD)
 3. Divine Names Ontology (DNO)
@@ -17,6 +18,12 @@ Each framework is implemented in Python with demos and can be run individually o
 
    installation
    usage
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Quranic Principles
+
+   quranic_principles
 
 .. toctree::
    :maxdepth: 2

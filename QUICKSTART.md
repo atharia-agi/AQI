@@ -1,6 +1,6 @@
-# Divine AI Suite — Quickstart Guide
+# AQI - Artificial Quranic Intelligence — Quickstart Guide
 
-Welcome to the first‑ever collection of AI frameworks inspired by Quranic & Hadith wisdom.
+Welcome to AQI, the first AI system that thinks with the paradigm of the Quran.
 
 ## Prerequisites
 
@@ -14,11 +14,11 @@ Welcome to the first‑ever collection of AI frameworks inspired by Quranic & Ha
 
 ```bash
 # If using git
-git clone <your-repo-url>
-cd divine-ai-suite
+git clone git@github.com:atharia-agi/AQI.git
+cd AQI
 
 # Or just navigate to the folder
-cd K:\\Quranic_AI
+cd K:\Quranic_AI
 ```
 
 ### 2. Create & Activate Virtual Environment
@@ -50,7 +50,7 @@ pip install -r requirements.txt
 python agent.py check
 ```
 
-You should see a green check for all 5 projects.
+You should see a green check for all 5 projects + Quranic Principles.
 
 ## Running Demos
 
@@ -75,15 +75,23 @@ python demo.py
 
 Repeat for 2.NBCD, 3.DNO, 4.EPM, 5.PDI-GPT.
 
+### Test Quranic Principles
+
+```python
+from quranic_principles.mathematical_codes import QuranicMathematicalCodes
+mc = QuranicMathematicalCodes()
+print(mc.get_sea_land_ratio())  # {'sea_percentage': 71.11, 'land_percentage': 28.89}
+```
+
 ## Expected Output
 
 Each demo will print:
 
 - Project title & description
 - Synthetic data generation or loading
-- Model training (very short, 5‑20 epochs)
+- Model training (very short, 5-20 epochs)
 - Results: loss curves, sample outputs, success messages
-- A final "✅ Demo completed successfully" line.
+- A final "[OK] Demo completed successfully" line.
 
 If you see errors, ensure:
 - You are inside the project folder when running `demo.py`
@@ -93,16 +101,17 @@ If you see errors, ensure:
 ## Project Structure
 
 ```
-divine-ai-suite/
+AQI/
+├── quranic_principles/    → Mathematical codes, scientific references, hidden patterns
 ├── agent.py               # CLI for actions
 ├── run_all_demos.py       # Master runner
 ├── requirements.txt       # Python dependencies
 ├── Makefile               # Shortcuts
 ├── LICENSE                # MIT
-├── README_MAIN.md         # Overview
+├── README.md              # Overview
 ├── DELIVERABLES.md        # Detailed deliverables matrix
 ├── QUICKSTART.md          # This file
-├── docs/                  # Sphinx documentation (to‑build)
+├── docs/                  # Sphinx documentation
 ├── 1.TES/
 │   ├── src/theological_embedding.py
 │   ├── data/asmaullah.json
@@ -133,26 +142,26 @@ divine-ai-suite/
 | `FileNotFoundError` for JSON data | Not running from project folder | `cd` into the specific project before running demo |
 | Import errors from `src` | Wrong working directory | Use provided demo scripts (they set `src` correctly) |
 | CUDA out of memory | Using GPU with insufficient VRAM | Set `device='cpu'` in demo.py (edit the line) |
-| Slow training on CPU | Normal for small nets; use GPU if available | Install CUDA‑compatible torch or increase epochs for full convergence |
+| Slow training on CPU | Normal for small nets; use GPU if available | Install CUDA-compatible torch or increase epochs for full convergence |
 
 ## Next Steps
 
 - Explore the **Deliverables Matrix** in `DELIVERABLES.md` to see where to take each project.
-- Read `README_MAIN.md` for philosophy and research background.
+- Read `README.md` for philosophy and research background.
 - Try the **agent CLI**: `python agent.py --help`
 - Contribute improvements via pull requests.
 - Cite this suite if used in research: include paper.tex or report.pdf.
 
 ## Citation
 
-If you use Divine AI Suite in your work, please cite:
+If you use AQI in your work, please cite:
 
 ```
-@software{divine_ai_suite_2025,
-  author = {BrowserOS Research},
-  title = {Divine AI Suite: Theological Embeddings, Causal Discovery, Divine Names Optimization, Eschatological Modeling, and Prophetic Dream Interpreter},
-  year = {2025},
-  url = {https://github.com/browseros-research/divine-ai-suite}
+@software{aqi_2026,
+  author = {Atharia AGI Team},
+  title = {AQI: Artificial Quranic Intelligence},
+  year = {2026},
+  url = {https://github.com/atharia-agi/AQI}
 }
 ```
 
@@ -162,9 +171,8 @@ MIT License (see LICENSE file). Use freely for research, education, and commerci
 
 ## Contact
 
-For questions, issues, or collaboration: open an issue on GitHub or reach out to the maintainer.
+For questions, issues, or collaboration: open an issue on GitHub.
 
 ---
 
-**May your AI be aligned with wisdom that transcends time.** 🤲
-
+**May your AI be aligned with wisdom that transcends time.**

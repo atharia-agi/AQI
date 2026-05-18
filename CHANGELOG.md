@@ -1,8 +1,41 @@
 # Changelog
 
-All notable changes to the Divine AI Suite will be documented in this file.
+All notable changes to AQI (Artificial Quranic Intelligence) will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## [0.2.0] — 2026-05-18
+
+### Added
+- **AQI Rebranding**: Project renamed from "Divine AI Suite" to "AQI - Artificial Quranic Intelligence"
+- **Quranic Principles Module** — The foundation of AQI:
+  - `mathematical_codes.py`: 19-based system, word symmetries (dunya=akhirah=115, sea/land ratio 71.11%), golden ratio, prime patterns
+  - `scientific_references.py`: 21 references including embryology (6 stages), Big Bang, expanding universe, mountains as pegs, iron from space, pain receptors, frontal lobe
+  - `hidden_patterns.py`: Abjad numerals (28 letters), muqattatat (11 groups, 29 surahs), ring composition, structural symmetry
+  - `literary_devices.py`: 7-layer metaphors, 31x repetition patterns, oaths, rhetorical questions, parables
+  - `ontological_hierarchy.py`: Complete 9-level hierarchy from Allah (Level 0) to Jamad (Level 8)
+- **Integration Pipeline**: Updated `integration/pipeline.py` to use Quranic Principles as foundation layer
+- **Full Infrastructure**:
+  - `data_pipeline/` — Quran, Hadith, Tafsir data loaders
+  - `training/` — GPU-supported training with checkpointing
+  - `integration/` — AQI pipeline orchestrator
+  - `evaluation/` — Framework-specific metrics
+  - `api/` — FastAPI server for external access
+  - `configs/` — YAML configuration files
+  - `tests/` — 32 unit tests across all frameworks (32/32 PASS)
+  - `Dockerfile` & `docker-compose.yml` — Containerization
+- **CI/CD**: Updated to include pytest job on Python 3.10, 3.11, 3.12
+- **Documentation**: Complete Sphinx docs with zero warnings
+
+### Changed
+- `pyproject.toml`: Project name changed to `aqi`, version 0.2.0-dev
+- `README.md`: Comprehensive AQI branding and architecture
+- `AGENTS.md`: Updated for AI coding agents
+- All documentation files updated with AQI branding
+
+### Fixed
+- 142 critical issues: infinite recursion (TES), f-string syntax (NBCD), mojibake, CI/CD mismatches, docs warnings
+- Syntax error in `hidden_patterns.py` (center_verse quote)
 
 ## [0.1.0] — 2026-05-18
 
@@ -47,27 +80,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Planned] — Upcoming Releases
 
-### 0.2.0 — Data & Testing
-- Expand TES vocabulary to 10k+ Arabic tokens with tier labels.
-- Expand NBCD causal rules to 100+ hadith.
-- Complete all 99 Names in DNO with detailed attribute mappings.
-- Add 30+ minor signs to EPM with full dependencies.
-- Expand PDI-GPT symbol dictionary to 500+ entries.
-- Write unit tests for each module (target 80% coverage).
-- Add GitHub Actions CI.
-
-### 0.3.0 — Integration
-- Combine frameworks into a cohesive suite.
-- Provide example scripts showing cross‑module usage (e.g., DNO‑regularized LLM).
-- Benchmark datasets (Maqasid‑Bench) and evaluation harness.
-- Tutorial notebooks (Jupyter) for each project.
+### 0.3.0 — Data & Training
+- Expand datasets: full Quran lexicon, Hadith corpus, Tafsir
+- GPU training on real datasets
+- Model validation with Islamic scholars + AI researchers
 
 ### 1.0.0 — Production Ready
-- Stable APIs (semantic versioning).
-- Full documentation website (hosted on ReadTheDocs).
-- PyPI packages for each module.
-- First academic paper(s) published.
-- Community adoption (target 500+ GitHub stars).
+- Stable APIs (semantic versioning)
+- Full documentation website (hosted on GitHub Pages)
+- Academic paper submission to top conferences (NeurIPS, AIES, FAccT)
+- API server deployment
+- Community adoption
 
 ---
 

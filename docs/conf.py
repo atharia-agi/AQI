@@ -1,16 +1,16 @@
-# Sphinx configuration for Divine AI Suite documentation
+# Sphinx configuration for AQI documentation
 
 import os
 import sys
 
 sys.path.insert(0, os.path.abspath('..'))
 
-project = 'Divine AI Suite'
-copyright = '2025-2026, Atharia AGI Team'
+project = 'AQI - Artificial Quranic Intelligence'
+copyright = '2026, Atharia AGI Team'
 author = 'Atharia AGI Team'
 
-release = '0.1.0'
-version = '0.1.0'
+release = '0.2.0-dev'
+version = '0.2.0'
 
 extensions = [
     'sphinx.ext.autodoc',

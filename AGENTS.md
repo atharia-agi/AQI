@@ -1,4 +1,4 @@
-# AGENTS.md — Divine AI Suite Agent Instructions
+# AGENTS.md — AQI Agent Instructions
 
 > This file tells AI coding agents (Claude Code, Codex, Cursor, etc.) how to work with this codebase. Read it before making any changes.
 
@@ -6,8 +6,8 @@
 
 ## Project Identity
 
-- **Name**: Divine AI Suite (a.k.a. Tawhid Engine)
-- **Repo**: `atharia-agi/tawhid-engine`
+- **Name**: AQI - Artificial Quranic Intelligence
+- **Repo**: `atharia-agi/AQI`
 - **License**: MIT (code), CC-BY-SA 4.0 (docs & data)
 - **Python**: 3.10+ (target: 3.11, 3.12)
 - **OS**: Cross-platform (Windows, Linux, macOS)
@@ -16,16 +16,17 @@
 
 ## Architecture Overview
 
-This is a **mono-repo** containing 5 independent AI frameworks + research code. Each framework lives in its own numbered directory:
+This is a **mono-repo** containing 6 pillars: Quranic Principles + 5 AI frameworks. Each framework lives in its own numbered directory:
 
 ```
-1.TES/          → Theological Embedding Space
-2.NBCD/         → Nass-Based Causal Discovery
-3.DNO/          → Divine Names Ontology
-4.EPM/          → Eschatological Predictive Modeling
-5.PDI-GPT/      → Prophetic Dream Interpreter
-research/       → Academic papers + Tawhid Unifier + Mizan Fairness
-docs/           → Sphinx documentation
+quranic_principles/ → Mathematical codes, scientific references, hidden patterns, literary devices, ontological hierarchy
+1.TES/              → Theological Embedding Space
+2.NBCD/             → Nass-Based Causal Discovery
+3.DNO/              → Divine Names Ontology
+4.EPM/              → Eschatological Predictive Modeling
+5.PDI-GPT/          → Prophetic Dream Interpreter
+research/           → Academic papers + Tawhid Unifier + Mizan Fairness
+docs/               → Sphinx documentation
 ```
 
 ### Root-Level Scripts
@@ -117,6 +118,12 @@ python agent.py demo all
 python verification.py
 ```
 
+### Run Tests
+
+```bash
+python -m pytest tests/ -v
+```
+
 ### Build Docs
 
 ```bash
@@ -135,15 +142,17 @@ flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics \
 # Format check
 black --check 1.TES/src 1.TES/demo.py 2.NBCD/src 2.NBCD/demo.py \
   3.DNO/src 3.DNO/demo.py 4.EPM/src 4.EPM/demo.py \
-  5.PDI-GPT/src 5.PDI-GPT/demo.py agent.py run_all_demos.py verification.py
+  5.PDI-GPT/src 5.PDI-GPT/demo.py agent.py run_all_demos.py verification.py \
+  quranic_principles/
 ```
 
 ### CI Pipeline
 
 The GitHub Actions CI (`.github/workflows/ci.yml`) runs:
 1. **verify** — `verification.py` + `run_all_demos.py` on Python 3.10, 3.11, 3.12
-2. **lint** — flake8 + black check
-3. **docs** — Sphinx build + deploy to GitHub Pages (on main/master branch)
+2. **test** — `pytest tests/` on Python 3.10, 3.11, 3.12
+3. **lint** — flake8 + black check
+4. **docs** — Sphinx build + deploy to GitHub Pages (on main/master branch)
 
 ---
 
@@ -151,7 +160,7 @@ The GitHub Actions CI (`.github/workflows/ci.yml`) runs:
 
 ### pyproject.toml
 
-- Project name: `divine-ai-suite`
+- Project name: `aqi`
 - Python modules at root: `agent`, `run_all_demos`, `verification`
 - Dependencies: torch (CPU), numpy, networkx, transformers, tqdm, scipy
 - Dev dependencies: pytest, flake8, black, isort, mypy, sphinx
@@ -191,7 +200,7 @@ The `research/` folder contains:
 - **src/tawhid_unifier/** — Multi-modal fusion engine (separate package)
 - **src/mizan_fairness/** — Islamic fairness metrics (separate package)
 
-The research code is **independent** from the main 5 frameworks. It has its own `pyproject.toml` and can be installed separately:
+The research code is **independent** from the main 6 pillars. It has its own `pyproject.toml` and can be installed separately:
 
 ```bash
 pip install -e research/src/tawhid_unifier
@@ -251,7 +260,7 @@ Use `pathlib.Path` or forward slashes. Avoid hardcoded Windows paths.
 
 ```python
 # WRONG
-path = "K:\\Workspace\\divine-ai-suite\\data"
+path = "K:\\Workspace\\aqi\\data"
 
 # CORRECT
 from pathlib import Path
@@ -291,6 +300,7 @@ path = Path(__file__).parent / "data"
 | Run all demos | `python run_all_demos.py` |
 | Run single demo | `cd 1.TES && python demo.py` |
 | Check integrity | `python verification.py` |
+| Run tests | `python -m pytest tests/ -v` |
 | Build docs | `python -m sphinx -b html docs docs/_build/html` |
 | Format code | `black 1.TES/src 1.TES/demo.py ...` |
 | Lint | `flake8 . --select=E9,F63,F7,F82 --exclude=docs,build,research` |

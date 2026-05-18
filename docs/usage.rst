@@ -4,17 +4,11 @@ Usage
 Running Demos
 -------------
 
-Each framework includes a demo script that showcases its capabilities.
-
-To run all demos sequentially:
-
-.. code-block:: bash
+All demos can be run sequentially::
 
     python run_all_demos.py
 
-To run a specific framework demo:
-
-.. code-block:: bash
+Or individually::
 
     cd 1.TES && python demo.py
     cd ../2.NBCD && python demo.py
@@ -25,53 +19,53 @@ To run a specific framework demo:
 Using the CLI
 -------------
 
-The suite provides a command-line interface via ``agent.py``.
+The agent.py script provides a command-line interface::
 
-.. code-block:: bash
+    python agent.py demo all      # Run all demos
+    python agent.py demo tes      # Run TES demo only
+    python agent.py check         # Verify integrity
+    python agent.py help          # Show help
 
-    python agent.py help
+Using Quranic Principles
+------------------------
 
-Available commands:
+The quranic_principles module is the foundation of AQI::
 
-- ``list`` - List all projects and status
-- ``demo all`` - Run all demos
-- ``demo 1.TES`` - Run a specific demo
-- ``check`` - Verify file integrity
-- ``status`` - Print suite status
-- ``install`` - Install dependencies
-- ``build-docs`` - Build documentation
+    from quranic_principles.mathematical_codes import QuranicMathematicalCodes
+    from quranic_principles.scientific_references import QuranicScientificReferences
+    from quranic_principles.hidden_patterns import QuranicHiddenPatterns
+    from quranic_principles.literary_devices import QuranicLiteraryDevices
+    from quranic_principles.ontological_hierarchy import QuranicOntologicalHierarchy
 
-Example:
+    mc = QuranicMathematicalCodes()
+    print(mc.get_sea_land_ratio())  # {'sea_percentage': 71.11, 'land_percentage': 28.89}
 
-.. code-block:: bash
+    sr = QuranicScientificReferences()
+    print(sr.get_embryology_stages())  # 6 stages from Surah Al-Mu'minun
 
-    python agent.py demo all
-    python agent.py check
+Using the Integration Pipeline
+------------------------------
 
-Programmatic Usage
-------------------
+The full AQI pipeline connects all frameworks::
 
-Each framework can be imported and used as a module.
+    from integration.pipeline import run_aqi_pipeline
 
-Example for TES:
+    result = run_aqi_pipeline()
+    print(result['summary'])
 
-.. code-block:: python
-
-    import sys
-    sys.path.insert(0, '1.TES/src')
-    from theological_embedding import TheologicalEmbedding, build_tier_mapping
-
-    tier_map = build_tier_mapping("1.TES/data/asmaullah.json")
-    model = TheologicalEmbedding(vocab_size=100, embed_dim=64, tier_to_indices=tier_map)
-
-Refer to each framework's README.md for detailed API documentation.
-
-Customization
+Configuration
 -------------
 
-You can modify the configuration files in each project directory to adjust hyperparameters, data paths, etc.
+Global configuration is stored in ``configs/default.yaml``. Edit this file to customize parameters for each framework.
 
-Contributing
-------------
+Docker
+------
 
-See CONTRIBUTING.md for guidelines on how to contribute to the Divine AI Suite.
+Build and run with Docker::
+
+    docker build -t aqi .
+    docker run --rm aqi python run_all_demos.py
+
+Or with docker-compose::
+
+    docker-compose up

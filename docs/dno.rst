@@ -1,58 +1,50 @@
 Divine Names Ontology (DNO)
-===========================
+============================
+
+The Divine Names Ontology (DNO) is a multi-attribute optimization framework that uses the 99 Beautiful Names of Allah (Asma ul-Husna) to evaluate and rank decisions across multiple theological dimensions.
 
 Overview
 --------
 
-The Divine Names Ontology (DNO) is a multi-attribute optimization framework that uses the 99 Beautiful Names of Allah as ethical and functional constraints in machine learning models.
-
-Key Features
-------------
-
-- Optimization under multiple divine attribute constraints
-- Weight balancing system preventing neglect of any divine attribute
-- Hadith-informed priority weights for names
-- Interpretability module showing which divine names influenced decisions
+DNO treats each of the 99 Names as an optimization objective, allowing for nuanced decision-making that reflects the multifaceted nature of Divine attributes.
 
 Architecture
 ------------
 
-DNO implements a layered optimization approach:
+The DNO framework includes:
 
-1. **Attribute Encoder**: Maps the 99 Names to measurable mathematical properties
-2. **Constraint Layer**: Enforces minimum thresholds for each divine attribute
-3. **Weight Balancer**: Dynamically adjusts optimization weights
-4. **Loss Function**: Combines task performance with divine attribute compliance
+- **Name Registry**: All 99 Names with Arabic, transliteration, and meaning
+- **Attribute Scoring**: Each decision is scored against relevant Names
+- **Pareto Optimization**: Finds solutions that balance competing Divine attributes
+- **Conflict Resolution**: Handles tensions between Names (e.g., Al-Ghaffar vs Al-Adl)
 
 Usage
 -----
 
-Basic usage:
-
 .. code-block:: python
 
     import sys
-    sys.path.insert(0, '3.DNO/src')
-    from names_optimizer import DivineNamesOptimizer, DEFAULT_ATTRIBUTES
+    sys.path.insert(0, 'src')
+    from divine_names import DivineNamesOptimizer
 
-    dno = DivineNamesOptimizer(
-        attributes_config=DEFAULT_ATTRIBUTES,
-        init_weights=[1.0, 1.0, 1.0, 0.8, 0.5, 0.3],
-        learn_weights=True,
-    )
+    optimizer = DivineNamesOptimizer()
+    optimizer.load_names()
+    result = optimizer.optimize(decisions, weights={'Al-Rahman': 0.3, 'Al-Adl': 0.2})
 
-    total_loss, weights, losses = dno.forward(logits, labels)
-    final_weights = dno.get_weights()
+API Reference
+-------------
 
-See the `DNO README <../3.DNO/README.md>`_ for more details.
+.. py:class:: DivineNamesOptimizer
 
-Theoretical Foundation
-----------------------
+   Main DNO optimizer class.
 
-DNO is grounded in Islamic theological concepts of *Asma' Allah al-Husna*, *Tawhid al-Asma' wa al-Sifat*, *Wasatiyyah*, and *Adl wa Ihsan*.
+   .. py:method:: load_names()
 
-References
-----------
+      Loads the 99 Beautiful Names.
 
-- Al-Ghazali. *Ihya Ulum al-Din*. Kitab al-Asma' wa al-Sifat.
-- Ibn Arabi, M. *Al-Futuhat al-Makkiyya*. Dar Sadr.
+   .. py:method:: optimize(decisions, weights)
+
+      Optimizes decisions against Divine Names.
+
+      :param decisions: List of decision options
+      :param weights: Weight dictionary for each Name

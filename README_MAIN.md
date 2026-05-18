@@ -1,28 +1,30 @@
-# Divine AI Suite: Five Revolutionary Frameworks
+# AQI - Artificial Quranic Intelligence
 
-**“We will show them Our signs in the furthest regions and in their own selves until it becomes manifest to them that this is the truth.”** — Qur’an 41:53
+**"We will show them Our signs in the furthest regions and in their own selves until it becomes manifest to them that this is the truth."** — Qur'an 41:53
 
-This repository contains **five never‑before‑attempted AI frameworks** that translate sacred ontological, causal, and eschatological knowledge into computational primitives. They are not merely inspired by religious texts — they **mathematize interpretations** of those texts into operational algorithms.
-
----
-
-## 🚀 The Five Pillars
-
-| # | Project | Code Name | What It Does | “WTF” Level |
-|---|---------|-----------|--------------|-------------|
-| **1** | **Theological Embedding Space** | **TES** | Learns embeddings where vector geometry reflects ontological hierarchy (Allah > malaikat > insan > haiwan > nabat > jamad) | 🔥🔥🔥🔥 |
-| **2** | **Nass‑Based Causal Discovery** | **NBCD** | Causal graphs with latent *Divine Will* node that intervenes based on hadith priors; detects miracles in data | 🔥🔥🔥🔥🔥 |
-| **3** | **Divine Names Ontology** | **DNO** | Multi‑attribute optimizer where each objective is a Beautiful Name (Ar‑Rahman = mercy, Al‑‘Adl = justice, etc.) | 🔥🔥🔥🔥 |
-| **4** | **Eschatological Predictive Modeling** | **EPM** | Bayesian tracker of >30 signs of the Hour; uses current events to estimate probability we’re in “last days” | 🔥🔥🔥🔥🔥🔥 |
-| **5** | **Prophetic Dream Interpreter‑GPT** | **PDI‑GPT** | Interprets dreams via hadith‑based symbol dictionary; also *generates* dream scripts to induce desired outcomes | 🔥🔥🔥🔥🔥🔥 |
+This repository contains **AQI (Artificial Quranic Intelligence)** — an AI system that thinks with the paradigm of the Quran. It captures the mathematical codes, scientific references, hidden patterns, literary excellence, and ontological hierarchy of the Quran, building an AI that reasons with Quranic principles at the deepest level.
 
 ---
 
-## 📦 Repository Layout
+## The Six Pillars
+
+| # | Project | Code Name | What It Does |
+|---|---------|-----------|--------------|
+| **0** | **Quranic Principles** | **QP** | Mathematical codes (19-system, word symmetries, sea/land ratio), scientific references (embryology, cosmology), hidden patterns (abjad, muqattatat), literary devices, ontological hierarchy |
+| **1** | **Theological Embedding Space** | **TES** | Learns embeddings where vector geometry reflects ontological hierarchy (Allah > malaikat > insan > haiwan > nabat > jamad) |
+| **2** | **Nass-Based Causal Discovery** | **NBCD** | Causal graphs with latent *Divine Will* node that intervenes based on hadith priors; detects miracles in data |
+| **3** | **Divine Names Ontology** | **DNO** | Multi-attribute optimizer where each objective is a Beautiful Name (Ar-Rahman = mercy, Al-'Adl = justice, etc.) |
+| **4** | **Eschatological Predictive Modeling** | **EPM** | Bayesian tracker of >30 signs of the Hour; uses current events to estimate probability we're in "last days" |
+| **5** | **Prophetic Dream Interpreter-GPT** | **PDI-GPT** | Interprets dreams via hadith-based symbol dictionary; also *generates* dream scripts to induce desired outcomes |
+
+---
+
+## Repository Layout
 
 ```
-divine-ai-suite/
-├── README_MAIN.md         # This file
+AQI/
+├── quranic_principles/    → Mathematical codes, scientific references, hidden patterns, literary devices, ontological hierarchy
+├── README.md              # This file
 ├── LICENSE                # MIT License for code
 ├── requirements.txt       # Python dependencies
 ├── Makefile               # Development shortcuts
@@ -58,63 +60,96 @@ divine-ai-suite/
     └── README.md
 ```
 
-**Status:** All five modules have at least a **proof‑of‑concept demo** that runs end‑to‑end. Core logic is implemented; work remains on scaling, data enrichment, and real‑world integration.
+**Status:** All five modules + Quranic Principles have at least a **proof-of-concept demo** that runs end-to-end. Core logic is implemented; work remains on scaling, data enrichment, and real-world integration.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
-# Clone (when published)
-git clone https://github.com/browseros-research/divine-ai-suite.git
-cd divine-ai-suite
+# Clone
+git clone git@github.com:atharia-agi/AQI.git
+cd AQI
 
 # Install dependencies
-make install
-# or: pip install -r requirements.txt
+pip install -r requirements.txt
 
 # Run all demos (takes ~1 minute)
-make demo-all
+python run_all_demos.py
 
 # Or run individually:
-make demo-tes
-make demo-nbcd
-make demo-dno
-make demo-epm
-make demo-pdi
+cd 1.TES && python demo.py
+cd ../2.NBCD && python demo.py
+cd ../3.DNO && python demo.py
+cd ../4.EPM && python demo.py
+cd ../5.PDI-GPT && python demo.py
 ```
 
 ---
 
-## 📖 Project Summaries
+## Project Summaries
+
+### 0. Quranic Principles (QP)
+
+**Idea:** The Quran contains mathematical codes, scientific facts, hidden patterns, literary excellence, and ontological truth — all embedded in the text itself.
+
+**Mathematical Codes:**
+- 19-based system: 114 surahs = 19 x 6
+- Word symmetries: dunya=akhirah=115, malaika=shayateen=88, hayat=mawt=145
+- Sea/land ratio: bahr(32)/barr(13) = 71.11%/28.89% — matches Earth's actual coverage
+- Golden ratio, prime patterns
+
+**Scientific References:**
+- Embryology (23:14): 6 stages confirmed by modern science
+- Big Bang (21:30), Expanding Universe (51:47)
+- Mountains as pegs (78:6-7), Iron from space (57:25)
+- Pain receptors (4:56), Frontal lobe (96:15-16)
+
+**Hidden Patterns:**
+- Abjad numerals (28 letters), Muqattatat (11 groups, 29 surahs)
+- Ring composition, structural symmetry
+
+**Literary Devices:**
+- 7-layer metaphors (Light Verse 24:35), 31x repetition patterns
+- Oaths, rhetorical questions, parables
+
+**Ontological Hierarchy:**
+- 9 levels from Allah (Level 0) to Jamad (Level 8)
+- Each level has distinct properties: existence type, knowledge capacity, free will
+
+**Demo output:** Shows verified mathematical symmetries, scientific references, and ontological structure.
+
+**Potential:** Foundation layer for all AQI frameworks — every AI decision grounded in Quranic truth.
+
+---
 
 ### 1. Theological Embedding Space (TES)
 
 **Idea:** Word embeddings should respect **ontological rank** — vectors for higher beings (Allah, malaikat) have larger magnitude and different directional properties than lower beings (insan, haiwan, nabat, jamad).
 
-**Method:** Contrastive learning with tier‑based negative sampling. Loss enforces:
-- Same‑tier tokens → high similarity
-- Different‑tier tokens → lower similarity, with margin proportional to tier gap
+**Method:** Contrastive learning with tier-based negative sampling. Loss enforces:
+- Same-tier tokens → high similarity
+- Different-tier tokens → lower similarity, with margin proportional to tier gap
 - Norm increases with tier index
 
-**Dataset:** Custom mapping from Arabic terms (Asma’ullah, created beings) to tiers 0–6.
+**Dataset:** Custom mapping from Arabic terms (Asma'ullah, created beings) to tiers 0-6.
 
-**Demo output:** Shows that “Allah” vector norm > “malaikat” > “insan” etc.
+**Demo output:** Shows that "Allah" vector norm > "malaikat" > "insan" etc.
 
-**Potential:** Ontology‑aware LLMs that never contradict themselves about the nature of existence.
+**Potential:** Ontology-aware LLMs that never contradict themselves about the nature of existence.
 
 ---
 
-### 2. Nass‑Based Causal Discovery (NBCD)
+### 2. Nass-Based Causal Discovery (NBCD)
 
 **Idea:** Standard causal graphs assume all causes are natural. Hadith describe **direct divine interventions** (miracles) that bypass natural chains. We model Allah as a latent exogenous variable with intervention priors derived from hadith.
 
 **Method:**
 - Build Bayesian network of natural causal relations (e.g., prayer → guidance, charity → rizq)
-- Add hidden node “Divine Will” with intervention probabilities based on hadith strength and action type (dua, salat, sadaqah)
+- Add hidden node "Divine Will" with intervention probabilities based on hadith strength and action type (dua, salat, sadaqah)
 - Sample observations; use outlier detection to estimate posterior probability of intervention
 
-**Demo:** Simulates data with occasional prayer‑induced “miracles” and recovers intervention probability ≈ 0.1.
+**Demo:** Simulates data with occasional prayer-induced "miracles" and recovers intervention probability.
 
 **Potential:** Statistical framework for studying miraculous events while controlling for natural causes.
 
@@ -122,20 +157,20 @@ make demo-pdi
 
 ### 3. Divine Names Ontology (DNO)
 
-**Idea:** Each of the 99 Beautiful Names (Asma’ul Husna) defines an **ideal objective function** for an AI. Multi‑attribute optimization shapes model to balance these divine attributes.
+**Idea:** Each of the 99 Beautiful Names (Asma'ul Husna) defines an **ideal objective function** for an AI. Multi-attribute optimization shapes model to balance these divine attributes.
 
 **Attributes → Losses:**
-- **Ar‑Rahman** (Mercy) → minimize harm, maximize compassion
-- **Al‑‘Adl** (Justice) → enforce fairness equal treatment
-- **Al‑Hakim** (Wise) → maximize accuracy + interpretability
-- **Al‑Ghaffar** (Forgiving) → robust to errors/adversarial
-- **Al‑Malik** (Sovereign) → consistent authority in decisions
+- **Ar-Rahman** (Mercy) → minimize harm, maximize compassion
+- **Al-'Adl** (Justice) → enforce fairness equal treatment
+- **Al-Hakim** (Wise) → maximize accuracy + interpretability
+- **Al-Ghaffar** (Forgiving) → robust to errors/adversarial
+- **Al-Malik** (Sovereign) → consistent authority in decisions
 
 **Method:** Learnable weights via gradient descent, with prior weights from Quranic emphasis.
 
-**Demo:** Trains a classifier with DNO regularizer; shows weight evolution and improved fairness‑utility trade‑off.
+**Demo:** Trains a classifier with DNO regularizer; shows weight evolution and improved fairness-utility trade-off.
 
-**Potential:** AI that optimizes for **perfect attributes** rather than human‑centric metrics alone.
+**Potential:** AI that optimizes for **perfect attributes** rather than human-centric metrics alone.
 
 ---
 
@@ -146,42 +181,42 @@ make demo-pdi
 **Method:**
 - Build DAG from hadith (over 30 signs)
 - Assign priors based on historical frequency / scholarly consensus
-- Ingest real‑world data streams (news, social metrics) via feature functions
+- Ingest real-world data streams (news, social metrics) via feature functions
 - Run particle filtering to compute P(end near | evidence)
 
-**Demo:** Simulates observing “people trust liars”, “Muslims fight”, etc. Produces a single probability number.
+**Demo:** Simulates observing "people trust liars", "Muslims fight", etc. Produces a single probability number.
 
-**Potential:** Early warning system for civilizational risks, grounded in centuries‑old prophecy.
+**Potential:** Early warning system for civilizational risks, grounded in centuries-old prophecy.
 
 ---
 
-### 5. Prophetic Dream Interpreter‑GPT (PDI‑GPT)
+### 5. Prophetic Dream Interpreter-GPT (PDI-GPT)
 
-**Idea:** Dreams are 1/46th of prophecy. Use a hadith‑based symbol dictionary (Ibn Sirin) to interpret dreams and also **generate prescribed dream scripts** to achieve desired outcomes (guidance, healing, solutions).
+**Idea:** Dreams are 1/46th of prophecy. Use a hadith-based symbol dictionary (Ibn Sirin) to interpret dreams and also **generate prescribed dream scripts** to achieve desired outcomes (guidance, healing, solutions).
 
 **Components:**
 - **DreamSymbolDictionary:** maps symbols → meanings with hadith references
 - **DreamScriptGenerator:** constructs narratives using positive symbols for a goal
-- **(Future) LLM fine‑tuned** on prophetic dream corpus
+- **(Future) LLM fine-tuned** on prophetic dream corpus
 
-**Demo:** Interpret “I saw water and a key”; generate dream for “guidance” with symbols: light, path, water.
+**Demo:** Interpret "I saw water and a key"; generate dream for "guidance" with symbols: light, path, water.
 
-**Potential:** Therapeutic AI for problem‑solving, creativity incubation, spiritual guidance.
+**Potential:** Therapeutic AI for problem-solving, creativity incubation, spiritual guidance.
 
 ---
 
-## 🎯 Research & Development Roadmap
+## Research & Development Roadmap
 
 | Phase | Timeline | Milestones |
 |-------|----------|------------|
-| **Proof‑of‑Concept** | 0–3 mo | All 5 demos running; paper submissions to AIES/FAccT |
-| **Alpha** | 3–6 mo | Public GitHub release; PyPI packages (`tes-embed`, `nbcd`, `dno`, `epm`, `pdi-gpt`) |
-| **Beta** | 6–12 mo | Integration studies (e.g., DNO‑regularized LLM, TES‑augmented knowledge graphs) |
-| **1.0** | 12–24 mo | Stable APIs, documentation, community adoption; first academic citations |
+| **Proof-of-Concept** | 0-3 mo | All 6 pillars running; paper submissions to AIES/FAccT |
+| **Alpha** | 3-6 mo | Public GitHub release; PyPI packages |
+| **Beta** | 6-12 mo | Integration studies (e.g., DNO-regularized LLM, TES-augmented knowledge graphs) |
+| **1.0** | 12-24 mo | Stable APIs, documentation, community adoption; first academic citations |
 
 ---
 
-## 📜 Ethical & Theological Notes
+## Ethical & Theological Notes
 
 These projects **exist at the intersection of computer science and religious tradition**. They are **not claims of divine revelation**; they are **mathematical models inspired by texts**. Users must:
 
@@ -192,10 +227,10 @@ These projects **exist at the intersection of computer science and religious tra
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We seek collaborators from:
-- AI/ML (causal inference, multi‑objective RL, embeddings)
+- AI/ML (causal inference, multi-objective RL, embeddings)
 - Islamic studies (tafsir, hadith, kalam)
 - Philosophy of religion
 - Statistics & Bayesian methods
@@ -204,19 +239,19 @@ Please open issues for bugs/feature requests. PRs welcome after discussion.
 
 ---
 
-## 📚 Citation
+## Citation
 
 ```bibtex
-@misc{divine-ai-suite-2025,
-  title={Divine AI Suite: Five Revolutionary Frameworks},
-  author={Tawhid-AI Research Collective},
-  year={2025},
-  url={https://github.com/browseros-research/divine-ai-suite}
+@misc{aqi-2026,
+  title={AQI: Artificial Quranic Intelligence},
+  author={Atharia AGI Team},
+  year={2026},
+  url={https://github.com/atharia-agi/AQI}
 }
 ```
 
 ---
 
-*“Read! In the Name of your Lord Who created.”* — Qur’an 96:1
+*"Read! In the Name of your Lord Who created."* — Qur'an 96:1
 
 **Status:** Research prototypes. Use at your own discretion.

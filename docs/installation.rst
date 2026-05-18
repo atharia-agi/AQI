@@ -1,55 +1,56 @@
 Installation
 ============
 
-Prerequisites
--------------
+System Requirements
+-------------------
 
-- Python 3.10 or higher (3.11+ recommended)
-- pip (Python package manager)
-- Git (for cloning the repository)
+- **Python**: 3.10, 3.11, or 3.12 (recommended: 3.12)
+- **OS**: Windows, Linux, macOS
+- **RAM**: 4 GB minimum (8 GB recommended)
+- **GPU**: Optional (CUDA-compatible for training)
 
-Steps
------
+Install from Source
+-------------------
 
-1. Clone the repository::
+Clone the repository::
 
-    git clone https://github.com/atharia-agi/tawhid-engine.git
-    cd tawhid-engine
+    git clone git@github.com:atharia-agi/AQI.git
+    cd AQI
 
-2. Install the required dependencies::
+Create a virtual environment (recommended)::
+
+    python -m venv .venv
+    source .venv/bin/activate  # Linux/macOS
+    .venv\Scripts\activate     # Windows
+
+Install dependencies::
 
     pip install -r requirements.txt
 
-3. (Optional) Install in development mode::
+For GPU support (optional)::
 
-    pip install -e .
+    pip install torch --index-url https://download.pytorch.org/whl/cu121
 
-4. Verify the installation::
+Verify Installation
+-------------------
+
+Run the integrity checker::
 
     python verification.py
 
-5. Run all demos::
+Run all demos::
 
     python run_all_demos.py
 
-   Or use the quick start script:
+Or run a single demo::
 
-   - Windows: ``quickstart.bat``
-   - Unix/Linux/macOS: ``bash quickstart.sh``
+    cd 1.TES && python demo.py
 
-Note: On Windows, if you encounter issues with the ``python`` command, use ``py`` instead.
+Development Installation
+------------------------
 
-Troubleshooting
----------------
+For development, install with dev dependencies::
 
-- If you get a ``ModuleNotFoundError`` for ``torch``, ensure you have installed the CPU version:
+    pip install -e ".[dev]"
 
-  .. code-block:: bash
-
-      pip install --index-url https://download.pytorch.org/whl/cpu torch>=2.0
-
-- If Sphinx is not found when building docs, install it via:
-
-  .. code-block:: bash
-
-      pip install sphinx sphinx-rtd-theme
+This includes pytest, flake8, black, isort, mypy, and sphinx.

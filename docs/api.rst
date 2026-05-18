@@ -1,159 +1,240 @@
 API Reference
 =============
 
-This section documents the public API for each framework in the Divine AI Suite.
+This page documents the public API of AQI.
+
+Note: The numbered framework directories (1.TES, 2.NBCD, etc.) are runtime directories, not valid Python packages. Their APIs are documented below manually.
+
+Quranic Principles
+------------------
+
+.. py:module:: quranic_principles
+
+   The foundation module containing all Quranic principles.
+
+Mathematical Codes
+^^^^^^^^^^^^^^^^^^
+
+.. py:class:: QuranicMathematicalCodes
+
+   Mathematical patterns in the Quran.
+
+   .. py:method:: get_sea_land_ratio()
+
+      Returns the sea/land ratio from Quranic word counts.
+      
+      :return: Dictionary with sea_percentage, land_percentage, and accuracy
+      :rtype: dict
+
+   .. py:method:: get_all_symmetries()
+
+      Returns all verified word symmetries.
+      
+      :return: List of symmetry dictionaries
+      :rtype: list
+
+   .. py:method:: check_nineteen_pattern(number)
+
+      Checks if a number is divisible by 19.
+      
+      :param number: The number to check
+      :type number: int
+      :return: Dictionary with divisibility info
+      :rtype: dict
+
+Scientific References
+^^^^^^^^^^^^^^^^^^^^^
+
+.. py:class:: QuranicScientificReferences
+
+   Scientific references in the Quran.
+
+   .. py:method:: get_embryology_stages()
+
+      Returns the 6 stages of embryology from Surah Al-Mu'minun.
+      
+      :return: List of embryology stage dictionaries
+      :rtype: list
+
+   .. py:method:: count_total_references()
+
+      Returns the total number of scientific references.
+      
+      :return: Total count
+      :rtype: int
+
+Hidden Patterns
+^^^^^^^^^^^^^^^
+
+.. py:class:: QuranicHiddenPatterns
+
+   Hidden patterns in the Quran.
+
+   .. py:method:: get_all_muqattatat()
+
+      Returns all muqattatat groups.
+      
+      :return: List of muqattatat group dictionaries
+      :rtype: list
+
+   .. py:method:: get_abjad_value(letter)
+
+      Returns the Abjad numerical value of an Arabic letter.
+      
+      :param letter: Arabic letter
+      :type letter: str
+      :return: Numerical value
+      :rtype: int
+
+Literary Devices
+^^^^^^^^^^^^^^^^
+
+.. py:class:: QuranicLiteraryDevices
+
+   Literary devices in the Quran.
+
+   .. py:method:: get_metaphors()
+
+      Returns all documented metaphors.
+      
+      :return: List of metaphor dictionaries
+      :rtype: list
+
+   .. py:method:: get_parables()
+
+      Returns all documented parables.
+      
+      :return: List of parable dictionaries
+      :rtype: list
+
+Ontological Hierarchy
+^^^^^^^^^^^^^^^^^^^^^
+
+.. py:class:: QuranicOntologicalHierarchy
+
+   Ontological hierarchy from the Quran.
+
+   .. py:method:: get_all_levels()
+
+      Returns all 9 levels of existence.
+      
+      :return: List of level dictionaries
+      :rtype: list
+
+   .. py:method:: get_level_properties(level)
+
+      Returns properties of a specific level.
+      
+      :param level: Level number (0-8)
+      :type level: int
+      :return: Level properties
+      :rtype: dict
 
 Theological Embedding Space (TES)
 ---------------------------------
 
-.. py:module:: tes_src.theological_embedding
+.. py:class:: TheologicalEmbedding
 
-.. py:class:: TheologicalEmbedding(vocab_size, embed_dim, tier_to_indices, margin=1.0, lambda_tier=0.1, lambda_hier=0.1)
+   Main TES class (from 1.TES/src/theological_embedding.py).
 
-   Learns embeddings where vector magnitude correlates with ontological proximity to Divine.
+   .. py:method:: initialize_embeddings()
 
-   :param int vocab_size: Number of tokens in vocabulary
-   :param int embed_dim: Embedding dimension
-   :param dict tier_to_indices: Mapping from tier level to token indices
-   :param float margin: Margin for contrastive loss
-   :param float lambda_tier: Weight for tier loss
-   :param float lambda_hier: Weight for hierarchical loss
+      Initializes the embedding space.
 
-   .. py:method:: forward(token_ids, positive_pairs=None, negative_pairs=None)
+   .. py:method:: visualize()
 
-      Compute total loss combining contrastive, tier, and hierarchical losses.
+      Visualizes the embedding space.
 
-   .. py:method:: get_ontological_position(token_id)
+.. py:function:: build_tier_mapping()
 
-      Return dict with tier, norm, and embedding for a token.
-
-   .. py:method:: query_similarity(token_a, token_b)
-
-      Return cosine similarity between two token embeddings.
-
-.. py:function:: build_tier_mapping(data_path)
-
-   Build tier mapping from JSON data file.
-
-   :param str data_path: Path to JSON file with tier data
-   :return: Dict mapping tier level to list of token indices
+   Builds a mapping of concepts to ontological tiers.
+   
+   :return: Dictionary mapping concept names to tier numbers
+   :rtype: dict
 
 Nass-Based Causal Discovery (NBCD)
 ----------------------------------
 
-.. py:module:: nbcd_src.causal_graph
+.. py:class:: NBCDGraph
 
-.. py:class:: NBCDGraph()
+   Main NBCD graph class (from 2.NBCD/src/causal_graph.py).
 
-   Causal graph with latent Divine Will node for discovering supernatural causality.
+   .. py:method:: add_node(*nodes)
 
-   .. py:method:: add_edge(source, target, strength, edge_type="natural")
+      Adds nodes to the graph.
+      
+      :param nodes: Node names
+      :type nodes: str
 
-      Add a causal edge with specified strength.
+   .. py:method:: add_divine_intervention(target)
 
-   .. py:method:: sample_observation(intervention_node=None, noise_std=0.1)
+      Adds a Divine intervention edge.
+      
+      :param target: Target node
+      :type target: str
 
-      Generate a synthetic observation from the causal graph.
+.. py:class:: DivineInterventionPrior
 
-   .. py:method:: estimate_divine_probability(data, intervention_node, target_node, threshold=2.0)
-
-      Estimate posterior probability of divine intervention.
-
-.. py:class:: DivineInterventionPrior(alpha=1.0, beta=9.0)
-
-   Beta prior for divine intervention probability.
+   Encodes Quranic knowledge about Divine intervention likelihood.
 
 Divine Names Ontology (DNO)
 ---------------------------
 
-.. py:module:: dno_src.names_optimizer
+.. py:class:: DivineNamesOptimizer
 
-.. py:class:: DivineNamesOptimizer(attributes_config, init_weights=None, learn_weights=True)
+   Main DNO optimizer class (from 3.DNO/src/names_optimizer.py).
 
-   Multi-attribute optimizer using divine names as constraints.
+   .. py:method:: load_names()
 
-   :param list attributes_config: List of attribute configurations
-   :param list init_weights: Initial weights for each attribute
-   :param bool learn_weights: Whether to learn weights during optimization
+      Loads the 99 Beautiful Names.
 
-   .. py:method:: forward(logits, labels)
+   .. py:method:: optimize(decisions, weights)
 
-      Compute weighted loss across all divine attributes.
-
-      :return: (total_loss, weights_dict, losses_dict)
-
-   .. py:method:: get_weights()
-
-      Return current attribute weights as dict.
-
-.. py:data:: DEFAULT_ATTRIBUTES
-
-   Default configuration for 6 divine attributes.
+      Optimizes decisions against Divine Names.
+      
+      :param decisions: List of decision options
+      :type decisions: list
+      :param weights: Weight dictionary for each Name
+      :type weights: dict
+      :return: Optimization result
+      :rtype: dict
 
 Eschatological Predictive Modeling (EPM)
-----------------------------------------
+-----------------------------------------
 
-.. py:module:: epm_src.prophecy_tracker
+.. py:class:: EschatologicalPredictor
 
-.. py:class:: SignNode(name, category, prior_p_manifest, parents=None, description="", hadith_ref="")
+   Main EPM predictor class (from 4.EPM/src/eschatological_model.py).
 
-   Represents a single eschatological sign.
+   .. py:method:: load_signs()
 
-.. py:class:: ProphecyBayesNet()
+      Loads the signs of the Hour.
 
-   Bayesian network for tracking signs of the Hour.
+   .. py:method:: update_evidence(sign_id, evidence_strength)
 
-   .. py:method:: add_node(node)
-
-      Add a sign node to the network.
-
-   .. py:method:: update_posterior(observations, n_particles=1000)
-
-      Update posterior probability using particle filtering.
-
-      :return: Probability that all major signs will manifest
+      Updates evidence for a sign.
+      
+      :param sign_id: Sign identifier
+      :type sign_id: str
+      :param evidence_strength: Strength of evidence (0-1)
+      :type evidence_strength: float
 
 Prophetic Dream Interpreter (PDI-GPT)
--------------------------------------
+--------------------------------------
 
-.. py:module:: pdi_gpt_src.dream_engine
+.. py:class:: DreamInterpreter
 
-.. py:class:: DreamSymbolDictionary(data_path)
+   Main dream interpreter class (from 5.PDI-GPT/src/dream_engine.py).
 
-   Maps dream symbols to their prophetic meanings.
+   .. py:method:: load_symbols()
 
-   :param str data_path: Path to JSON symbol database
+      Loads dream symbols from hadith.
 
-   .. py:method:: interpret(dream_description)
+   .. py:method:: interpret(dream_text)
 
-      Interpret a dream description using symbol matching.
-
-      :return: Dict with interpretations list and verdict string
-
-.. py:class:: DreamScriptGenerator(symbol_dict)
-
-   Generates dream narratives for specific spiritual goals.
-
-   .. py:method:: generate(goal, length=3)
-
-      Generate a dream script for the given goal.
-
-      :return: Dict with goal, symbols_used, narrative, and interpretation
-
-Agent Interface
----------------
-
-.. py:module:: agent
-
-Command-line interface for managing the Divine AI Suite.
-
-Available commands:
-
-- ``help`` - Show help message
-- ``list`` - List all projects and status
-- ``demo <project|all>`` - Run demo for a project
-- ``test <project|all>`` - Run tests for a project
-- ``install`` - Install dependencies
-- ``build-docs`` - Build Sphinx documentation
-- ``check`` - Verify file integrity
-- ``status`` - Print suite status
+      Interprets a dream.
+      
+      :param dream_text: Dream description
+      :type dream_text: str
+      :return: Interpretation result
+      :rtype: dict
