@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "divine-ai-suite"
-version = "0.1.0"
-description = "Five revolutionary AI frameworks inspired by Islamic epistemology: TES, NBCD, DNO, EPM, PDI-GPT"
+name = "aqi"
+version = "0.2.0-dev"
+description = "AQI - Artificial Quranic Intelligence: AI that thinks with the paradigm of the Quran"
 readme = "README_MAIN.md"
 license = { text = "MIT" }
 authors = [

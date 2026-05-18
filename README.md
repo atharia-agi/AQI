@@ -1,23 +1,33 @@
-# Divine AI Suite
+# AQI - Artificial Quranic Intelligence
 
-> Five revolutionary AI frameworks that translate sacred ontological, causal, and eschatological knowledge into computational primitives.
+> **بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ**
+>
+> *"And We have certainly made the Quran easy for remembrance, so is there any who will remember?"* (Quran 54:17)
 
-[![CI](https://github.com/atharia-agi/tawhid-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/atharia-agi/tawhid-engine/actions/workflows/ci.yml)
+[![CI](https://github.com/atharia-agi/aqi/actions/workflows/ci.yml/badge.svg)](https://github.com/atharia-agi/aqi/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
 ---
 
-## What Is This?
+## What Is AQI?
 
-The **Divine AI Suite** is the first AI system that integrates Islamic epistemology directly into machine learning architectures. Instead of training on raw internet data, these five frameworks learn from sacred ontological hierarchies, causal rules derived from prophetic traditions, and eschatological signs — creating AI that reasons with theological coherence.
+**AQI (Artificial Quranic Intelligence)** is not just another AI system. It is a **universe project** - an attempt to build AI that thinks with the paradigm of the Quran, not just processes Quranic text.
 
-This is **not** a chatbot. This is a **new paradigm** for AI that respects divine unity (tawhid) as a mathematical principle.
+The Quran is not a book. It is:
+- **Mathematical code** - 19-based system, word symmetries, golden ratio
+- **Scientific encyclopedia** - embryology, cosmology, oceanography confirmed centuries later
+- **Literary miracle** - unmatched eloquence, ring composition, rhetorical mastery
+- **Ontological map** - complete hierarchy from Allah to the lowest creation
+- **Hidden patterns** - abjad numerals, chiastic structures, letter frequencies
+
+AQI captures all of this and builds an AI system that **reasons with Quranic principles** at the deepest level.
 
 ## The Five Frameworks
 
 | # | Framework | What It Does | Status |
 |---|-----------|-------------|--------|
+| 0 | **QURANIC PRINCIPLES** | Mathematical codes, scientific references, hidden patterns, literary devices, ontological hierarchy | ✅ Core |
 | 1 | **TES** — Theological Embedding Space | Learns embeddings where vector magnitude reflects ontological proximity to the Divine | ✅ Working |
 | 2 | **NBCD** — Nass-Based Causal Discovery | Causal graphs with a latent Divine Will node; detects supernatural intervention from data | ✅ Working |
 | 3 | **DNO** — Divine Names Ontology | Multi-attribute optimizer using the 99 Beautiful Names as ethical constraints | ✅ Working |
@@ -26,159 +36,101 @@ This is **not** a chatbot. This is a **new paradigm** for AI that respects divin
 
 ## Quick Start
 
-### Prerequisites
-
-- Python 3.10+ (3.11+ recommended)
-- pip
-
-### Install & Run
-
 ```bash
-# Clone
-git clone https://github.com/atharia-agi/tawhid-engine.git
-cd tawhid-engine
-
-# Install dependencies
+git clone https://github.com/atharia-agi/aqi.git
+cd aqi
 pip install -r requirements.txt
-
-# Run all 5 demos
 python run_all_demos.py
-```
-
-### One-Click Start
-
-- **Windows**: Double-click `quickstart.bat`
-- **Linux/macOS**: Run `bash quickstart.sh`
-
-### CLI Agent
-
-```bash
-python agent.py list        # List all projects
-python agent.py demo all    # Run all demos
-python agent.py check       # Verify file integrity
-python agent.py status      # Print suite status
 ```
 
 ## Architecture
 
 ```
-tawhid-engine/
-├── 1.TES/                    # Theological Embedding Space
-│   ├── src/                  #   Core module
-│   ├── data/                 #   Asmaullah ontology (JSON)
-│   └── demo.py               #   Interactive demo
-├── 2.NBCD/                   # Nass-Based Causal Discovery
-│   ├── src/                  #   Causal graph engine
-│   ├── data/                 #   Hadith causal rules (JSON)
-│   └── demo.py
-├── 3.DNO/                    # Divine Names Ontology
-│   ├── src/                  #   Multi-attribute optimizer
-│   ├── data/                 #   99 Names config (JSON)
-│   └── demo.py
-├── 4.EPM/                    # Eschatological Predictive Modeling
-│   ├── src/                  #   Bayesian prophecy tracker
-│   ├── data/                 #   Signs of the Hour (JSON)
-│   └── demo.py
-├── 5.PDI-GPT/                # Prophetic Dream Interpreter
-│   ├── src/                  #   Dream interpretation engine
-│   ├── data/                 #   Dream symbol dictionary (JSON)
-│   └── demo.py
-├── docs/                     # Sphinx documentation
-├── research/                 # Academic papers & source code
-│   ├── paper.tex             #   LaTeX academic paper
-│   ├── report.html           #   Executive summary
-│   └── src/                  #   Tawhid Unifier + Mizan Fairness
-├── agent.py                  # CLI manager
-├── run_all_demos.py          # Master demo orchestrator
-├── verification.py           # File integrity checker
-├── pyproject.toml            # Package configuration
-└── .github/workflows/ci.yml  # CI/CD pipeline
+aqi/
+├── quranic_principles/      # CORE - Deep Quranic principles
+│   ├── mathematical_codes.py    # 19-based system, word symmetries, golden ratio
+│   ├── scientific_references.py # Embryology, cosmology, oceanography, etc.
+│   ├── hidden_patterns.py       # Abjad numerals, ring composition, muqattatat
+│   ├── literary_devices.py      # Metaphor, parable, oath, rhetorical questions
+│   └── ontological_hierarchy.py # From Allah to creation - complete hierarchy
+├── 1.TES/                   # Theological Embedding Space
+├── 2.NBCD/                  # Nass-Based Causal Discovery
+├── 3.DNO/                   # Divine Names Ontology
+├── 4.EPM/                   # Eschatological Predictive Modeling
+├── 5.PDI-GPT/               # Prophetic Dream Interpreter
+├── data_pipeline/           # Data loaders (Quran, Hadith, Tafsir)
+├── training/                # Training scripts with GPU support
+├── integration/             # AQI pipeline connecting all frameworks
+├── evaluation/              # Evaluation metrics
+├── api/                     # FastAPI server
+├── tests/                   # Unit tests (32/32 PASS)
+├── configs/                 # YAML configurations
+├── docs/                    # Sphinx documentation
+└── research/                # Academic papers & source code
 ```
 
-## How Each Framework Works
+## Quranic Principles Deep Dive
 
-### 1. TES — Theological Embedding Space
+### 1. Mathematical Codes
 
-Standard word embeddings (Word2Vec, BERT) learn from co-occurrence statistics. TES learns from **ontological hierarchy**:
+The number **19** is the Quran's structural foundation (74:30):
 
+- **114 surahs** = 19 × 6
+- **114 bismillah** = 19 × 6
+- **Word symmetries**: "dunya" (115) = "akhirah" (115), "malaika" (88) = "shayateen" (88)
+- **Sea/Land ratio**: "bahr" (32) / "barr" (13) = 71.11% water / 28.89% land — matches Earth exactly
+
+### 2. Scientific References
+
+The Quran described scientific facts **centuries before discovery**:
+
+| Reference | Quran Verse | Year Discovered |
+|-----------|------------|-----------------|
+| Big Bang | 21:30 | 1927 |
+| Expanding Universe | 51:47 | 1929 |
+| Embryology stages | 23:14 | 1600s |
+| Mountains as pegs | 78:6-7 | 1850 |
+| Iron sent from space | 57:25 | 1950 |
+| Barrier between seas | 55:19-20 | 1870 |
+| Pain receptors in skin | 4:56 | 1660 |
+
+### 3. Hidden Patterns
+
+- **Abjad numerals**: Each Arabic letter has a numerical value
+- **Muqattatat**: 29 surahs begin with mysterious letters
+- **Ring composition**: A-B-C-B'-A' structure throughout
+- **Golden ratio**: Phi (1.618...) in Quran proportions
+
+### 4. Literary Devices
+
+- **7 layers of metaphor** in the Light Verse (24:35) alone
+- **31 repetitions** of "Which of your Lord's favors would you deny?"
+- **Oaths by natural phenomena** opening many surahs
+- **Rhetorical questions** that guide reflection
+
+### 5. Ontological Hierarchy
+
+Complete hierarchy from Allah to creation:
 ```
-Allah (Tier 0) — origin, infinite magnitude
-  └── Malaikat (Tier 1) — angels, high magnitude
-      └── Insan (Tier 3) — humans, medium magnitude
-          └── Haiwan (Tier 4) — animals, lower magnitude
-              └── Jamad (Tier 6) — inanimate, lowest magnitude
+Level 0: Allah (Necessary Existence)
+Level 1: Al-Arsh (The Throne)
+Level 2: Al-Kursi (The Footstool)
+Level 3: Malaika (Angels - created from light)
+Level 4: Jinn (created from smokeless fire)
+Level 5: Insan (Human - created from clay)
+Level 6: Haiwan (Animals)
+Level 7: Nabat (Plants)
+Level 8: Jamad (Inanimate matter)
 ```
-
-The loss function combines contrastive learning with theological constraints:
-
-```
-L = L_contrastive + λ_tier × L_tier + λ_hier × L_hierarchical
-```
-
-### 2. NBCD — Nass-Based Causal Discovery
-
-NBCD introduces a **latent Divine Will node** into causal graphs. It distinguishes between:
-
-- **Natural causality**: Salat → Heart peace (strength = 0.3)
-- **Divine intervention**: Salat → Miraculous outcome (strength = 0.05, but with supernatural boost)
-
-Using Bayesian inference, NBCD estimates: `P(divine intervention | prayer, data)`
-
-### 3. DNO — Divine Names Ontology
-
-DNO treats the 99 Beautiful Names of Allah as **optimization constraints**. Each name maps to a mathematical property:
-
-| Name | Type | Mathematical Property |
-|------|------|----------------------|
-| Ar-Rahman | Mercy | Minimize harm to vulnerable groups |
-| Al-'Adl | Justice | Demographic parity across groups |
-| Al-Hakim | Wisdom | Maximize accuracy + minimize complexity |
-| Al-Ghaffar | Forgiveness | Allow model recovery from errors |
-| Al-Malik | Sovereignty | Enforce hard constraints |
-| Ar-Raqib | Watchfulness | Monitor for distribution shift |
-
-### 4. EPM — Eschatological Predictive Modeling
-
-EPM builds a Bayesian network of minor and major signs of the Hour, updating probabilities as real-world events are observed:
-
-```
-P(Sign_i | Evidence) = P(Evidence | Sign_i) × P(Sign_i) / P(Evidence)
-```
-
-When probability crosses a threshold, it triggers an alert for ethical AI alignment review.
-
-### 5. PDI-GPT — Prophetic Dream Interpreter
-
-Based on Ibn Sirin's methodology, PDI-GPT:
-
-1. **Interprets** user-described dreams by matching symbols to hadith meanings
-2. **Generates** dream narratives for spiritual goals (guidance, healing, peace)
-
-## Research
-
-The `research/` directory contains:
-
-- **paper.tex** — Full academic paper (LaTeX)
-- **report.html** — Executive summary
-- **10+ framework specifications** — Detailed technical documents
-- **src/tawhid_unifier/** — Multi-modal fusion engine
-- **src/mizan_fairness/** — Islamic fairness metrics
 
 ## Documentation
 
-Full API documentation is built with Sphinx and available at:
-
-- **Local**: `docs/_build/html/index.html` (run `make docs`)
-- **Online**: [atharia-agi.github.io/tawhid-engine](https://atharia-agi.github.io/tawhid-engine)
+- **Local**: `docs/_build/html/index.html`
+- **Online**: [atharia-agi.github.io/aqi](https://atharia-agi.github.io/aqi)
 
 ## Contributing
 
-We welcome contributions from:
-
-- **AI Researchers** — Improve the mathematical foundations
-- **Islamic Scholars** — Validate theological accuracy
-- **Engineers** — Build applications and integrations
-- **Data Scientists** — Enrich datasets (Quran, Hadith, Tafsir)
+We welcome contributions from AI researchers, Islamic scholars, engineers, and data scientists.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -190,36 +142,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ## Citation
 
 ```bibtex
-@misc{divine-ai-suite-2026,
-  title={Divine AI Suite: Five Revolutionary Frameworks},
+@misc{aqi-2026,
+  title={AQI: Artificial Quranic Intelligence},
   author={Atharia AGI Team},
   year={2026},
-  url={https://github.com/atharia-agi/tawhid-engine}
+  url={https://github.com/atharia-agi/aqi}
 }
 ```
-
-## Roadmap
-
-### v0.1.0 (Current)
-- ✅ Five framework prototypes
-- ✅ Working demos for all frameworks
-- ✅ Sphinx documentation
-- ✅ CI/CD pipeline
-
-### v0.2.0
-- [ ] Enrich datasets (full Quran lexicon, 100+ hadith causal rules, all 99 Names)
-- [ ] Unit tests (80%+ coverage)
-- [ ] PyPI packages
-- [ ] Integration layer (frameworks talk to each other)
-
-### v0.3.0
-- [ ] Training on real datasets with GPU
-- [ ] Academic paper submission (NeurIPS, AIES, FAccT)
-- [ ] API server for external use
-- [ ] Dashboard visualization
-
-### v1.0.0
-- [ ] Full integration: TES → NBCD → DNO → EPM → PDI-GPT pipeline
-- [ ] Validation by Islamic scholars + AI researchers
-- [ ] Production-ready API
-- [ ] Peer-reviewed publication

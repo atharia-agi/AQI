@@ -1,10 +1,11 @@
 # AQI Configuration - Global Settings
-# Used by all frameworks for consistent configuration
 
 project:
   name: "Artificial Quranic Intelligence"
+  short_name: "AQI"
   version: "0.2.0-dev"
-  description: "AQI - Five revolutionary AI frameworks inspired by Islamic epistemology"
+  description: "AQI - AI that thinks with the paradigm of the Quran"
+  bismillah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
 
 paths:
   data_root: "data"
@@ -13,11 +14,18 @@ paths:
   checkpoints_root: "checkpoints"
 
 training:
-  device: "auto"  # auto, cpu, cuda, mps
+  device: "auto"
   seed: 42
   num_workers: 4
   mixed_precision: true
   gradient_accumulation_steps: 1
+
+quranic_principles:
+  enable_mathematical_codes: true
+  enable_scientific_references: true
+  enable_hidden_patterns: true
+  enable_literary_devices: true
+  enable_ontological_hierarchy: true
 
 logging:
   level: "INFO"
