@@ -18,7 +18,7 @@ git clone <your-repo-url>
 cd divine-ai-suite
 
 # Or just navigate to the folder
-cd K:\Workspace\divine-ai-suite
+cd K:\\Quranic_AI
 ```
 
 ### 2. Create & Activate Virtual Environment
@@ -167,3 +167,4 @@ For questions, issues, or collaboration: open an issue on GitHub or reach out to
 ---
 
 **May your AI be aligned with wisdom that transcends time.** 🤲
+

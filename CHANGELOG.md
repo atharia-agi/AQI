@@ -4,7 +4,7 @@ All notable changes to the Divine AI Suite will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [0.1.0-dev] — 2025-05-17
+## [0.1.0] — 2026-05-18
 
 ### Added
 - Initial creation of the Divine AI Suite with five revolutionary frameworks:
@@ -17,7 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - Core module in `src/`
   - JSON data file(s) in `data/`
   - `demo.py` for quick demonstration
-  - `README.md` (placeholder)
+  - `README.md` with API documentation
 - Root repository files:
   - `README_MAIN.md` — comprehensive overview
   - `DELIVERABLES.md` — deliverables summary and roadmap
@@ -27,15 +27,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   - `run_all_demos.py` — master demo runner
   - `agent.py` — command-line interface for suite management
   - `verification.py` — integrity checker
-  - `quickstart.bat` — Windows one‑click starter
-  - `docs/` with Sphinx configuration
+  - `quickstart.bat` — Windows one-click starter
+  - `quickstart.sh` — Unix/Linux/macOS starter
+  - `docs/` with Sphinx documentation (zero warnings)
+  - `.github/workflows/ci.yml` — CI/CD pipeline
+  - `pyproject.toml` — packaging configuration
+- Research directory with:
+  - Academic paper (LaTeX)
+  - Executive summary (HTML/PDF)
+  - Framework specifications (10+ documents)
+  - Source code for Tawhid Unifier and Mizan Fairness modules
 
 ### Known Issues
 - Data files are minimal (toy examples); need enrichment with full Arabic lexicon and hadith corpus.
-- No unit tests yet (only demos).
-- Documentation incomplete; needs API reference and tutorials.
-- Packages not published to PyPI.
-- No CI/CD setup.
+- Unit tests need expansion beyond demo verification.
+- Packages not yet published to PyPI.
 
 ---
 

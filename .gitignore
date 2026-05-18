@@ -73,12 +73,18 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
-# Project specific
-*.pdf
-*.html
-!README*.md
+# Project specific - build artifacts
 docs/_build/
 notebooks/.ipynb_checkpoints/
+
+# Backup files
+*.bak
+*.tmp
+*.log
+*.rst.bak
+
+# Stray pip output
+2.0.0
 
 # Secrets
 *.key
@@ -87,8 +93,3 @@ secrets.json
 credentials.json
 .env.local
 .env.production
-
-# Temporary files
-*.tmp
-*.bak
-*.log

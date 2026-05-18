@@ -20,7 +20,7 @@ To run a specific framework demo:
     cd ../2.NBCD && python demo.py
     cd ../3.DNO && python demo.py
     cd ../4.EPM && python demo.py
-    cd ../5.PDI‑GPT && python demo.py
+    cd ../5.PDI-GPT && python demo.py
 
 Using the CLI
 -------------
@@ -29,20 +29,24 @@ The suite provides a command-line interface via ``agent.py``.
 
 .. code-block:: bash
 
-    python agent.py --help
+    python agent.py help
 
 Available commands:
 
-- ``demo``: Run all demos
-- ``check``: Check file integrity of all projects
-- ``docs``: Build the documentation
-- ``test``: Run tests (if any)
+- ``list`` - List all projects and status
+- ``demo all`` - Run all demos
+- ``demo 1.TES`` - Run a specific demo
+- ``check`` - Verify file integrity
+- ``status`` - Print suite status
+- ``install`` - Install dependencies
+- ``build-docs`` - Build documentation
 
 Example:
 
 .. code-block:: bash
 
-    python agent.py demo
+    python agent.py demo all
+    python agent.py check
 
 Programmatic Usage
 ------------------
@@ -53,9 +57,12 @@ Example for TES:
 
 .. code-block:: python
 
-    from TES.src.theological_embedding import TheologicalEmbeddingSpace
-    model = TheologicalEmbeddingSpace(embedding_dim=128)
-    # ... train or use model
+    import sys
+    sys.path.insert(0, '1.TES/src')
+    from theological_embedding import TheologicalEmbedding, build_tier_mapping
+
+    tier_map = build_tier_mapping("1.TES/data/asmaullah.json")
+    model = TheologicalEmbedding(vocab_size=100, embed_dim=64, tier_to_indices=tier_map)
 
 Refer to each framework's README.md for detailed API documentation.
 

@@ -16,10 +16,8 @@ from names_optimizer import DivineNamesOptimizer, DEFAULT_ATTRIBUTES
 def synthetic_data(n=1000):
     """Create binary classification with sensitive attribute."""
     X = torch.randn(n, 10)
-    # True underlying function depends on all features equally
     logits = X @ torch.randn(10, 2)
     y = torch.argmax(logits, dim=1)
-    # Sensitive group (e.g., gender)
     sensitive = (X[:, 0] > 0).long()
     return X, y, sensitive
 
@@ -33,33 +31,30 @@ class SimpleClassifier(nn.Module):
 def fairness_loss(logits, sensitive, y):
     """
     Compute demographic parity difference as fairness metric.
-    We want P(y_hat=1 | group=0) â‰ˆ P(y_hat=1 | group=1)
+    We want P(y_hat=1 | group=0) ~ P(y_hat=1 | group=1)
     """
     preds = torch.argmax(logits, dim=1)
-    prob_0 = (preds[sensitive==0] == 1).float().mean()
-    prob_1 = (preds[sensitive==1] == 1).float().mean()
+    prob_0 = (preds[sensitive == 0] == 1).float().mean()
+    prob_1 = (preds[sensitive == 1] == 1).float().mean()
     dp_diff = torch.abs(prob_0 - prob_1)
     return dp_diff
 
 def main():
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("  DIVINE NAMES ONTOLOGY (DNO) DEMO")
     print("  Optimizing with Multiple Divine Attributes")
-    print("="*70 + "\n")
+    print("=" * 70 + "\n")
 
-    # Load data
     X, y, sensitive = synthetic_data(500)
     dataset = torch.utils.data.TensorDataset(X, y, sensitive)
     loader = torch.utils.data.DataLoader(dataset, batch_size=32, shuffle=True)
 
-    # Initialize model and DNO optimizer
     model = SimpleClassifier()
     dno = DivineNamesOptimizer(
         attributes_config=DEFAULT_ATTRIBUTES,
-        init_weights=[1.0, 1.0, 1.0, 0.8, 0.5, 0.3],  # weights for 6 attrs
-        learn_weights=True
+        init_weights=[1.0, 1.0, 1.0, 0.8, 0.5, 0.3],
+        learn_weights=True,
     )
-    # DNO's learnable parameters are in dno.raw_weights if learn_weights=True
     params = list(model.parameters())
     if dno.learn_weights and dno.raw_weights is not None:
         params.append(dno.raw_weights)
@@ -67,7 +62,7 @@ def main():
 
     print("[Attributes]")
     for i, name in enumerate(dno.attr_names):
-        print(f"  {i+1}. {name} (type: {DEFAULT_ATTRIBUTES[i]['attribute_type']})")
+        print(f"  {i + 1}. {name} (type: {DEFAULT_ATTRIBUTES[i]['attribute_type']})")
 
     print("\n[Training] 50 epochs with divine attribute balancing...")
     for epoch in range(50):
@@ -75,11 +70,7 @@ def main():
         for batch_X, batch_y, batch_s in loader:
             optimizer.zero_grad()
             logits = model(batch_X)
-            # Standard cross-entropy (will be weighted by DNO)
-            # DNO combines multiple attribute objectives
             total_loss, weights, losses = dno.forward(logits, batch_y)
-            # Additionally, we add explicit fairness constraint using sensitive attr
-            # (In full DNO, fairness would be one of the divine attributes)
             fair_loss = fairness_loss(logits, batch_s, batch_y)
             total_loss = total_loss + 0.5 * fair_loss
 
@@ -90,8 +81,10 @@ def main():
         if epoch % 10 == 0:
             with torch.no_grad():
                 current_weights = dno.get_weights()
-                print(f"  Epoch {epoch:3d} | Loss: {epoch_loss:.4f} | Weights: " +
-                      ", ".join(f"{name[:3]}={w:.2f}" for name, w in current_weights.items()))
+                print(
+                    f"  Epoch {epoch:3d} | Loss: {epoch_loss:.4f} | Weights: "
+                    + ", ".join(f"{name[:3]}={w:.2f}" for name, w in current_weights.items())
+                )
 
     print("\n[Evaluation]")
     model.eval()
@@ -108,10 +101,9 @@ def main():
     for name, w in final_weights.items():
         print(f"  {name}: {w:.3f}")
 
-    print("\nâœ… DNO complete: model trained under multiâ€‘divineâ€‘attribute constraints.")
-    print("   Compare weights with expected priorities (Arâ€‘Rahman, Alâ€‘â€˜Adl highest).\n")
+    print("\n[OK] DNO complete: model trained under multi-divine-attribute constraints.")
+    print("   Compare weights with expected priorities (Ar-Rahman, Al-Adl highest).\n")
+
 
 if __name__ == "__main__":
     main()
-
-

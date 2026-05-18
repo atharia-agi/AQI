@@ -7,6 +7,7 @@ These losses operationalize the principles of Tawhid (unity) and Mizan (balance)
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from typing import Dict
 
 
 class ConsistencyLoss(nn.Module):
@@ -123,7 +124,7 @@ class MizanRegularizer(nn.Module):
         # Uniformity penalty: KL(Uniform || weights)
         uniform = torch.ones_like(weights) / self.num_objectives
         kl_uniform = F.kl_div(
-            F.log_softmax(weights, dim=0),
+            F.log_softmax(self.raw_weights, dim=0),
             uniform,
             reduction="sum",
         )

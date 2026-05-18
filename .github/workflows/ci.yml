@@ -2,93 +2,85 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, master, develop]
   pull_request:
-    branches: [ main ]
+    branches: [main, master]
 
 jobs:
-  test:
+  verify:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.10", "3.11", "3.12"]
 
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
-    
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install pytest pytest-cov
-    
-    - name: Run verification
-      run: |
-        python verification.py
-    
-    - name: Run all demos
-      run: |
-        python run_all_demos.py
-    
-    - name: Run tests with coverage
-      run: |
-        pytest --cov=src --cov-report=xml
-    
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
-      with:
-        file: ./coverage.xml
-        flags: unittests
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu torch>=2.0
+          pip install -r requirements.txt
+
+      - name: Run verification
+        run: python verification.py
+
+      - name: Run all demos
+        run: python run_all_demos.py
 
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.11"
-    
-    - name: Install linting tools
-      run: |
-        pip install flake8 mypy black isort
-    
-    - name: Lint with flake8
-      run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-    
-    - name: Check formatting with black
-      run: |
-        black --check src/ demo.py
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install linting tools
+        run: pip install flake8 black isort
+
+      - name: Lint with flake8
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics \
+            --exclude=docs,build,dist,*.egg-info,.git,__pycache__
+
+      - name: Check formatting with black
+        run: |
+          black --check \
+            1.TES/src 1.TES/demo.py \
+            2.NBCD/src 2.NBCD/demo.py \
+            3.DNO/src 3.DNO/demo.py \
+            4.EPM/src 4.EPM/demo.py \
+            5.PDI-GPT/src 5.PDI-GPT/demo.py \
+            agent.py run_all_demos.py verification.py
 
   docs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.11"
-    
-    - name: Install Sphinx and dependencies
-      run: |
-        pip install sphinx sphinx-rtd-theme
-    
-    - name: Build documentation
-      run: |
-        cd docs
-        make html
-    
-    - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/_build/html
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Sphinx and dependencies
+        run: pip install sphinx sphinx-rtd-theme
+
+      - name: Build documentation
+        run: python -m sphinx -b html docs docs/_build/html
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/_build/html

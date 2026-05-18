@@ -1,10 +1,11 @@
-.PHONY: help install test demo-all clean docs
+.PHONY: help install test demo-all clean docs verify
 
 help:
-	@echo "Divine AI Suite — Five Revolutionary Frameworks"
+	@echo "Divine AI Suite - Five Revolutionary Frameworks"
 	@echo ""
 	@echo "Targets:"
 	@echo "  install       install Python dependencies"
+	@echo "  verify        run file integrity verification"
 	@echo "  test          run unit tests for all modules"
 	@echo "  demo-all      run all 5 demos sequentially"
 	@echo "  demo-tes      run Theological Embedding Space demo"
@@ -18,11 +19,14 @@ help:
 install:
 	pip install -r requirements.txt
 
+verify:
+	python verification.py
+
 test:
 	@echo "Running tests..."
 	@for d in 1.TES 2.NBCD 3.DNO 4.EPM 5.PDI-GPT; do \
 		echo "Testing $$d..."; \
-		if [ -f "$$d/tests/test_*.py" ]; then pytest $$d/tests/; else echo "  (no tests)"; fi \
+		if [ -d "$$d/tests" ]; then pytest "$$d/tests/"; else echo "  (no tests)"; fi \
 	done
 
 demo-all: demo-tes demo-nbcd demo-dno demo-epm demo-pdi
@@ -48,10 +52,11 @@ demo-pdi:
 	@cd 5.PDI-GPT && python demo.py
 
 docs:
-	sphinx-build -b html docs build/html
+	python -m sphinx -b html docs docs/_build/html
 
 clean:
-	rm -rf __pycache__ */__pycache__ */src/__pycache__ */tests/__pycache__
-	rm -rf .pytest_cache .coverage htmlcov
-	rm -rf */data/*.npy */data/*.npz
-	rm -rf K:/Workspace/divine-ai-suite/*/data/*.cache
+	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+	find . -type d -name .pytest_cache -exec rm -rf {} + 2>/dev/null || true
+	find . -type f -name "*.pyc" -delete 2>/dev/null || true
+	find . -type f -name "*.cache" -delete 2>/dev/null || true
+	rm -rf docs/_build build dist *.egg-info .coverage htmlcov 2>/dev/null || true

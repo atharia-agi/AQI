@@ -27,4 +27,9 @@ Each framework is implemented in Python with demos and can be run individually o
    dno
    epm
    pdi-gpt
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Reference
+
    api

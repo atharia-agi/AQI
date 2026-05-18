@@ -60,7 +60,7 @@ The paper articulates 7 testable hypotheses (H1–H7) covering:
 
 These can be implemented using standard ML benchmarks (MultiTask, Adult Income, COMPAS, WMT, HumanEval, etc.).
 
-##_next Steps
+## Next Steps
 
 1. Review and edit the LaTeX source (affiliations, funding, competing interests).
 2. Add real experimental results to Sections 5–6.

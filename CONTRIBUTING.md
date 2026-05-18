@@ -61,7 +61,7 @@ Each project (1.TES, 2.NBCD, 3.DNO, 4.EPM, 5.PDI-GPT) follows this structure:
 - **Type hints:** Use for all function signatures.
 - **Docstrings:** Google style.
 - **Imports:** Use `isort` to sort (standard library, third‑party, local).
-- **Formatting:** `black` (line length 88).
+- **Formatting:** `black (line length 100, see pyproject.toml)).
 - **Error handling:** Raise meaningful exceptions; avoid bare `except`.
 - **Logging:** Use `logging` module for debug/info messages in demos.
 
@@ -106,3 +106,4 @@ Contact the maintainer: research@browseros.ai or open an issue.
 *“Whoever treads a path in search of knowledge, Allah will make easy for him the path to Paradise.”* — Sahih Muslim 2699a
 
 Happy coding! 🚀
+

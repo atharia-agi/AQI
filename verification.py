@@ -8,6 +8,7 @@ from pathlib import Path
 
 PROJECTS = ["1.TES", "2.NBCD", "3.DNO", "4.EPM", "5.PDI-GPT"]
 
+
 def check_project(proj: Path):
     errors = []
     if not (proj / "demo.py").exists():
@@ -26,9 +27,10 @@ def check_project(proj: Path):
             errors.append("no JSON data files")
     return errors
 
+
 def main():
-    print("\nDivine AI Suite — Verification")
-    print("="*60)
+    print("\nDivine AI Suite - Verification")
+    print("=" * 60)
     all_ok = True
     for proj_name in PROJECTS:
         proj_path = Path(proj_name)
@@ -41,14 +43,15 @@ def main():
         else:
             print(f"[ OK ] {proj_name}")
 
-    print("="*60)
+    print("=" * 60)
     if all_ok:
-        print("✅ All projects are complete and ready to run.")
+        print("[OK] All projects are complete and ready to run.")
         print("   Run: python run_all_demos.py")
         return 0
     else:
-        print("❌ Some projects are incomplete. Fix errors before running.")
+        print("[FAIL] Some projects are incomplete. Fix errors before running.")
         return 1
+
 
 if __name__ == "__main__":
     sys.exit(main())
