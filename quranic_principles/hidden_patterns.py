@@ -85,7 +85,7 @@ MUQATTATAT_SURAHS = {
 STRUCTURAL_SYMMETRY = {
     # Center of the Quran
     "center_surah": "Al-Kahf (18)",
-    "center_verse": "Let him be gentle" (18:19),
+    "center_verse": "Let him be gentle (18:19)",
     "total_surahs": 114,
     "surahs_before_center": 18,
     "surahs_after_center": 95,
