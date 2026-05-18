@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "source": "Hadith collections (Sahih Bukhari, Sahih Muslim, Sunan Ibn Majah)",
+    "note": "Prior probabilities are illustrative; actual estimates require scholarly consensus."
+  },
+  "signs": [
+    {
+      "name": "trust_liar",
+      "category": "minor",
+      "description": "People will trust the liar",
+      "hadith_ref": "Sahih Bukhari 7126",
+      "prior": 0.5,
+      "parents": []
+    },
+    {
+      "name": "muslims_fight",
+      "category": "minor",
+      "description": "Muslims will fight among themselves",
+      "hadith_ref": "Sahih Bukhari 86, 93",
+      "prior": 0.7,
+      "parents": []
+    },
+    {
+      "name": "occult_widespread",
+      "category": "minor",
+      "description": "Witchcraft/occult becomes widespread",
+      "hadith_ref": "Sahih Muslim 5, 226 b",
+      "prior": 0.4,
+      "parents": []
+    },
+    {
+      "name": "knowledge_disappears",
+      "category": "minor",
+      "description": "Knowledge will be taken away ( Scholars die )",
+      "hadith_ref": "Sahih Bukhari 100, 226",
+      "prior": 0.6,
+      "parents": []
+    },
+    {
+      "name": "authority_to_wicked",
+      "category": "minor",
+      "description": "Authority given to those unworthy",
+      "hadith_ref": "Sahih Muslim 5, 228",
+      "prior": 0.6,
+      "parents": []
+    },
+    {
+      "name": "dajjal_appearance",
+      "category": "major",
+      "description": "Appearance of the Dajjal (Antichrist)",
+      "hadith_ref": "Sahih Bukhari 86, 93",
+      "prior": 0.3,
+      "parents": ["trust_liar", "knowledge_disappears"]
+    },
+    {
+      "name": "isa_descends",
+      "category": "major",
+      "description": "Descent of Prophet Isa (Jesus) peace be upon him",
+      "hadith_ref": "Sahih Muslim 1, 293",
+      "prior": 0.2,
+      "parents": ["dajjal_appearance"]
+    },
+    {
+      "name": "yahujud_majuj",
+      "category": "major",
+      "description": "Emergence of Gog and Magog",
+      "hadith_ref": "Sahih Bukhari 93, 7126",
+      "prior": 0.2,
+      "parents": ["isa_descends"]
+    },
+    {
+      "name": "sun_rises_west",
+      "category": "major",
+      "description": "Sun rises from the West (sign of Judgment)",
+      "hadith_ref": "Sahih Muslim 1, 293",
+      "prior": 0.1,
+      "parents": ["dajjal_appearance"]
+    },
+    {
+      "name": "al_dam_three",
+      "category": "major",
+      "description": "Three major wars (al‑malhamah) and massive bloodshed",
+      "hadith_ref": "Sunan Abu Dawud 2, 231",
+      "prior": 0.4,
+      "parents": ["muslims_fight"]
+    },
+    {
+      "name": "fire_of_hijaz",
+      "category": "major",
+      "description": "Fire in Hijaz that lights the skies",
+      "hadith_ref": "Sahih Bukhari 86, 93",
+      "prior": 0.2,
+      "parents": ["authority_to_wicked"]
+    },
+    {
+      "name": "earthquake_sham",
+      "category": "major",
+      "description": "Three earthquakes in the Levant",
+      "hadith_ref": "Sahih Muslim 1, 295",
+      "prior": 0.15,
+      "parents": ["occult_widespread"]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "source": "Ibn Sirin's Dream Interpretation methodology, validated by hadith",
+  "symbols": [
+    {
+      "symbol": "water",
+      "meaning": "Rizq (sustenance) and life; clean water is good, murky is bad",
+      "strength": "high",
+      "hadith_ref": "Sahih Bukhari 77, 77: ‘Seeing Allah in a dream is like seeing the moon...’"
+    },
+    {
+      "symbol": "light",
+      "meaning": "Guidance (hidayah) and divine revelation",
+      "strength": "high",
+      "hadith_ref": "Qur'an 24:35 (Nur)"
+    },
+    {
+      "symbol": "key",
+      "meaning": "Solution to a problem, opening of doors",
+      "strength": "high",
+      "hadith_ref": "Sahih Bukhari 3627: ‘If you lay a matter before Allah, He will bring it to you.’"
+    },
+    {
+      "symbol": "path",
+      "meaning": "The straight path (sirat al-mustaqim); guidance",
+      "strength": "high",
+      "hadith_ref": "Qur'an 1:6"
+    },
+    {
+      "symbol": "mountain",
+      "meaning": "Stability, firmness in faith; great matter",
+      "strength": "medium",
+      "hadith_ref": "Sahih Muslim 1438 a"
+    },
+    {
+      "symbol": "prophet",
+      "meaning": "Good news, guidance, or intercession",
+      "strength": "very high",
+      "hadith_ref": "Sahih Bukhari 3317"
+    },
+    {
+      "symbol": "prayer",
+      "meaning": "Connection to Allah, solace",
+      "strength": "high",
+      "hadith_ref": "Sahih Bukhari 526"
+    },
+    {
+      "symbol": "green",
+      "meaning": "Islam, goodness, prosperity",
+      "strength": "medium",
+      "hadith_ref": "Sahih Bukhari 5718"
+    },
+    {
+      "symbol": "tree",
+      "meaning": "A good companion or beneficial knowledge",
+      "strength": "medium",
+      "hadith_ref": "Sahih Muslim 2814"
+    },
+    {
+      "symbol": "bird",
+      "meaning": "Good news, ease, or a traveler",
+      "strength": "medium",
+      "hadith_ref": "Ibn Sirin"
+    },
+    {
+      "symbol": "medicine",
+      "meaning": "Healing, both physical and spiritual",
+      "strength": "medium",
+      "hadith_ref": "Sahih Bukhari 5676"
+    },
+    {
+      "symbol": "gold",
+      "meaning": "Wealth and wisdom; but beware of trials",
+      "strength": "medium",
+      "hadith_ref": "Sahih Muslim 1152 a"
+    },
+    {
+      "symbol": "rain",
+      "meaning": "Mercy, blessings, relief",
+      "strength": "high",
+      "hadith_ref": "Sahih Bukhari 1034"
+    },
+    {
+      "symbol": "camel",
+      "meaning": "Travel, provision, or a powerful person",
+      "strength": "low",
+      "hadith_ref": "Ibn Sirin"
+    },
+    {
+      "symbol": "book",
+      "meaning": "Knowledge, wisdom, or a decision",
+      "strength": "high",
+      "hadith_ref": "Sahih Bukhari 2215"
+    },
+    {
+      "symbol": "sunrise",
+      "meaning": "New beginning, glad tidings, emergence of truth",
+      "strength": "high",
+      "hadith_ref": "Sahih Muslim 225"
+    },
+    {
+      "symbol": "white",
+      "meaning": "Purity, peace, righteousness",
+      "strength": "high",
+      "hadith_ref": "Sahih Bukhari 6448"
+    },
+    {
+      "symbol": "moon",
+      "meaning": "A just ruler or a scholar",
+      "strength": "medium",
+      "hadith_ref": "Sahih Bukhari 74"
+    },
+    {
+      "symbol": "calm sea",
+      "meaning": "Peace, tranquility, stable heart",
+      "strength": "medium",
+      "hadith_ref": "Qur'an 24:40 (but reversed context)"
+    },
+    {
+      "symbol": "smile",
+      "meaning": "Good news, pleasure of Allah",
+      "strength": "medium",
+      "hadith_ref": "Sahih Bukhari 6133"
+    }
+  ],
+  "actions": [
+    {
+      "action": "flying",
+      "meaning": "Elevation in status, spiritual ascension",
+      "hadith_ref": "Sahih Bukhari 6414"
+    },
+    {
+      "action": "falling",
+      "meaning": "Fear, humiliation, or sin",
+      "hadith_ref": "Ibn Sirin"
+    },
+    {
+      "action": "running",
+      "meaning": "Haste towards good or away from evil",
+      "hadith_ref": "Sahih Bukhari 1394"
+    },
+    {
+      "action": "hiding",
+      "meaning": "Need for privacy, fear of exposure",
+      "hadith_ref": "Ibn Sirin"
+    },
+    {
+      "action": "speaking truth",
+      "meaning": "Good news, success",
+      "hadith_ref": "Sahih Bukhari 6094"
+    },
+    {
+      "action": "crying",
+      "meaning": "Fear of Allah or relief",
+      "hadith_ref": "Sahih Bukhari 6983"
+    },
+    {
+      "action": "laughing",
+      "meaning": "Joy, but be cautious of false dreams",
+      "hadith_ref": "Sahih Bukhari 6412"
+    },
+    {
+      "action": "eating",
+      "meaning": "Acquiring lawful sustenance",
+      "hadith_ref": "Ibn Sirin"
+    },
+    {
+      "action": "reading_quran",
+      "meaning": "Great reward, closeness to Allah",
+      "hadith_ref": "Sahih Bukhari 6414"
+    },
+    {
+      "action": "praying",
+      "meaning": "Righteousness, contentment",
+      "hadith_ref": "Sahih Bukhari 6415"
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "names": [
+    {
+      "index": 0,
+      "name": "Ar-Rahman",
+      "translation": "The Most Merciful",
+      "attribute_type": "mercy",
+      "description": "Encompasses all creation with mercy; minimizes suffering",
+      "weight": 1.2,
+      "hadith_ref": "Qur'an 1:1, 55:1"
+    },
+    {
+      "index": 1,
+      "name": "Ar-Rahim",
+      "translation": "The Most Compassionate",
+      "attribute_type": "mercy",
+      "description": "Shows special mercy to believers",
+      "weight": 1.1,
+      "hadith_ref": "Qur'an 1:3"
+    },
+    {
+      "index": 2,
+      "name": "Al-Malik",
+      "translation": "The King",
+      "attribute_type": "sovereignty",
+      "description": "Absolute sovereignty over all things",
+      "weight": 0.8,
+      "hadith_ref": "Qur'an 59:23"
+    },
+    {
+      "index": 3,
+      "name": "Al-Quddus",
+      "translation": "The Most Holy",
+      "attribute_type": "purity",
+      "description": "Free from any imperfection",
+      "weight": 0.7,
+      "hadith_ref": "Qur'an 59:23"
+    },
+    {
+      "index": 4,
+      "name": "As-Salam",
+      "translation": "The Source of Peace",
+      "attribute_type": "peace",
+      "description": "Grants peace and security",
+      "weight": 0.8,
+      "hadith_ref": "Qur'an 59:23"
+    },
+    {
+      "index": 5,
+      "name": "Al-Mu'min",
+      "translation": "The Guardian of Faith",
+      "attribute_type": "trustworthiness",
+      "description": "Ensures safety and security",
+      "weight": 0.9,
+      "hadith_ref": "Qur'an 59:23"
+    },
+    {
+      "index": 6,
+      "name": "Al-Muhaymin",
+      "translation": "The Protector",
+      "attribute_type": "watchfulness",
+      "description": "Watches over all things",
+      "weight": 0.7,
+      "hadith_ref": "Qur'an 59:23"
+    },
+    {
+      "index": 7,
+      "name": "Al-Aziz",
+      "translation": "The Mighty",
+      "attribute_type": "strength",
+      "description": "Unconquerable, honored",
+      "weight": 0.8,
+      "hadith_ref": "Qur'an 59:23"
+    },
+    {
+      "index": 8,
+      "name": "Al-Jabbar",
+      "translation": "The Compeller",
+      "attribute_type": "force",
+      "description": "Restores rights by force",
+      "weight": 0.6,
+      "hadith_ref": "Qur'an 59:23"
+    },
+    {
+      "index": 9,
+      "name": "Al-Mutakabbir",
+      "translation": "The Supreme",
+      "attribute_type": "greatness",
+      "description": "Supreme above all",
+      "weight": 0.5,
+      "hadith_ref": "Qur'an 59:23"
+    },
+    {
+      "index": 10,
+      "name": "Al-Khaliq",
+      "translation": "The Creator",
+      "attribute_type": "creation",
+      "description": "Brings from nonexistence to existence",
+      "weight": 1.0,
+      "hadith_ref": "Qur'an 59:24"
+    },
+    {
+      "index": 11,
+      "name": "Al-Bari'",
+      "translation": "The Originator",
+      "attribute_type": "creation",
+      "description": "Creates without precedent",
+      "weight": 0.9,
+      "hadith_ref": "Qur'an 59:24"
+    },
+    {
+      "index": 12,
+      "name": "Al-Musiwwir",
+      "translation": "The Fashioner",
+      "attribute_type": "formation",
+      "description": "Gives shape and form",
+      "weight": 0.8,
+      "hadith_ref": "Qur'an 59:24"
+    },
+    {
+      "index": 13,
+      "name": "Al-Ghaffar",
+      "translation": "The All-Forgiving",
+      "attribute_type": "forgiveness",
+      "description": "Forgives repeatedly",
+      "weight": 0.9,
+      "hadith_ref": "Qur'an 20:82"
+    },
+    {
+      "index": 14,
+      "name": "Al-Qahhar",
+      "translation": "The Subduer",
+      "attribute_type": "dominion",
+      "description": "Overcomes all opposition",
+      "weight": 0.7,
+      "hadith_ref": "Qur'an 14:48"
+    },
+    {
+      "index": 15,
+      "name": "Al-Wahhab",
+      "translation": "The Bestower",
+      "attribute_type": "generosity",
+      "description": "Gives without expecting return",
+      "weight": 0.8,
+      "hadith_ref": "Qur'an 38:9"
+    },
+    {
+      "index": 16,
+      "name": "Ar-Razzaq",
+      "translation": "The Provider",
+      "attribute_type": "sustenance",
+      "description": "Provides for all creatures",
+      "weight": 0.9,
+      "hadith_ref": "Qur'an 51:58"
+    },
+    {
+      "index": 17,
+      "name": "Al-Fattah",
+      "translation": "The Opener",
+      "attribute_type": "victory",
+      "description": "Opens doors of success",
+      "weight": 0.8,
+      "hadith_ref": "Qur'an 34:26"
+    },
+    {
+      "index": 18,
+      "name": "Al-'Alim",
+      "translation": "The All-Knowing",
+      "attribute_type": "knowledge",
+      "description": "Possessor of complete knowledge",
+      "weight": 1.0,
+      "hadith_ref": "Qur'an 2:158"
+    },
+    {
+      "index": 19,
+      "name": "Al-Qabid",
+      "translation": "The Withholder",
+      "attribute_type": "restriction",
+      "description": "Restricts provision as wisdom",
+      "weight": 0.6,
+      "hadith_ref": "Hadith Qudsi"
+    },
+    {
+      "index": 20,
+      "name": "Al-Basit",
+      "translation": "The Expander",
+      "attribute_type": "expansion",
+      "description": "Expands provision and mercy",
+      "weight": 0.7,
+      "hadith_ref": "Hadith Qudsi"
+    },
+    {
+      "index": 21,
+      "name": "Al-Khafid",
+      "translation": "The Abaser",
+      "attribute_type": "humiliation",
+      "description": "Lowers the arrogant",
+      "weight": 0.5,
+      "hadith_ref": "Hadith"
+    },
+    {
+      "index": 22,
+      "name": "Ar-Rafi",
+      "translation": "The Exalter",
+      "attribute_type": "exaltation",
+      "description": "Raises the humble",
+      "weight": 0.7,
+      "hadith_ref": "Hadith"
+    },
+    {
+      "index": 23,
+      "name": "Al-Mu'izz",
+      "translation": "The Honorer",
+      "attribute_type": "honor",
+      "description": "Gives honor",
+      "weight": 0.8,
+      "hadith_ref": "Hadith"
+    },
+    {
+      "index": 24,
+      "name": "Al-Mudhill",
+      "translation": "The Disgraced",
+      "attribute_type": "disgrace",
+      "description": "Brings disgrace to wrongdoers",
+      "weight": 0.4,
+      "hadith_ref": "Hadith"
+    },
+    {
+      "index": 25,
+      "name": "As-Sami'",
+      "translation": "The All-Hearing",
+      "attribute_type": "hearing",
+      "description": "Hears all sounds",
+      "weight": 0.9,
+      "hadith_ref": "Qur'an 2:127"
+    },
+    {
+      "index": 26,
+      "name": "Al-Basir",
+      "translation": "The All-Seeing",
+      "attribute_type": "vision",
+      "description": "Sees all things",
+      "weight": 0.9,
+      "hadith_ref": "Qur'an 4:1"
+    },
+    {
+      "index": 27,
+      "name": "Al-Hakam",
+      "translation": "The Judge",
+      "attribute_type": "judgment",
+      "description": "Perfect judge between disputes",
+      "weight": 0.8,
+      "hadith_ref": "Qur'an 16:84"
+    },
+    {
+      "index": 28,
+      "name": "Al-'Adl",
+      "translation": "The Utterly Just",
+      "attribute_type": "justice",
+      "description": "Complete justice",
+      "weight": 1.0,
+      "hadith_ref": "Qur'an 6:115"
+    },
+    {
+      "index": 29,
+      "name": "Al-Latif",
+      "translation": "The Subtle",
+      "attribute_type": "subtlety",
+      "description": "Aware of subtle details",
+      "weight": 0.7,
+      "hadith_ref": "Qur'an 33:34"
+    },
+    {
+      "index": 30,
+      "name": "Al-Khabir",
+      "translation": "The All-Aware",
+      "attribute_type": "awareness",
+      "description": "Knows the inner secrets",
+      "weight": 0.9,
+      "hadith_ref": "Qur'an 23:115"
+    }
+  ]
+}

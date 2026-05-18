@@ -1,0 +1,51 @@
+{
+  "divine_intervention_edges": [
+    {
+      "from": "dua_supplication",
+      "to": "rizq_sustenance",
+      "hadith_ref": "Sahih Bukhari 2072",
+      "text": "No one ever complains about his provision but that Allah provides for him from an unexpected source",
+      "intervention_log_odds": 1.8,
+      "notes": "Du'a can cause miraculous sustenance beyond natural causes"
+    },
+    {
+      "from": "salat_prayer",
+      "to": "holy_guidance",
+      "hadith_ref": "Sahih Muslim 663",
+      "text": "The first matter that the servant will be brought to account for on the Day of Judgment is the prayer",
+      "intervention_log_odds": 2.0,
+      "notes": "Prayer can directly influence divine guidance"
+    },
+    {
+      "from": "sadaqah_charity",
+      "to": "barakah_blessing",
+      "hadith_ref": "Sahih Bukhari 1414",
+      "text": "Charity does not decrease wealth",
+      "intervention_log_odds": 1.0,
+      "notes": "Charity invokes miraculous multiplication"
+    },
+    {
+      "from": "dhikr_remembrance",
+      "to": "heart_peace",
+      "hadith_ref": "Qur'an 13:28",
+      "text": "Unquestionably, by the remembrance of Allah hearts are reassured",
+      "intervention_log_odds": 1.5,
+      "notes": "Divine intervention in emotional state"
+    },
+    {
+      "from": "istikhara_seeking",
+      "to": "decision_correctness",
+      "hadith_ref": "Sahih Bukhari 1166",
+      "text": "If one of you is perplexed, let him pray Istikhara",
+      "intervention_log_odds": 1.8,
+      "notes": "Direct divine guidance in choices"
+    }
+  ],
+  "edge_types": {
+    "dua_supplication": "dua",
+    "salat_prayer": "prayer",
+    "sadaqah_charity": "charity",
+    "dhikr_remembrance": "dhikr",
+    "istikhara_seeking": "dua"
+  }
+}

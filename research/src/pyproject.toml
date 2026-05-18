@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tawhid-unifier"
+version = "0.1.0.dev0"
+description = "Unified World Model Architecture inspired by Tawhid (Oneness) principle"
+authors = [
+    {name = "Tawhid-AI Research Collective", email = "research@browseros.ai"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["ai", "ethics", "unified-model", "multimodal", "islamic-epistemology"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.0",
+    "transformers>=4.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black",
+    "isort",
+    "flake8",
+]
+
+[project.urls]
+Homepage = "https://github.com/browseros-research/tawhid-unifier"
+Repository = "https://github.com/browseros-research/tawhid-unifier.git"
+
+[tool.setuptools]
+packages = ["tawhid_unifier"]
+
+[tool.setuptools.package-dir]
+"" = "src"
