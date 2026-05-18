@@ -1,0 +1,28 @@
+# NBCD Training Configuration
+# Nass-Based Causal Discovery
+
+model:
+  prior_alpha: 1.0
+  prior_beta: 9.0
+  intervention_threshold: 2.5
+  noise_std: 0.2
+
+training:
+  n_samples: 10000
+  intervention_rate: 0.1
+  bootstrap_iterations: 100
+
+data:
+  causal_rules: "data/hadith_causal_rules.json"
+  edge_types:
+    - prayer
+    - charity
+    - dua
+    - dhikr
+    - fasting
+
+evaluation:
+  metrics:
+    - divine_probability
+    - causal_strength_accuracy
+    - edge_precision

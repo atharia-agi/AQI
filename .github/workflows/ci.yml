@@ -34,6 +34,31 @@ jobs:
       - name: Run all demos
         run: python run_all_demos.py
 
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu torch>=2.0
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Run tests
+        run: pytest tests/ -v
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -50,7 +75,7 @@ jobs:
       - name: Lint with flake8
         run: |
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics \
-            --exclude=docs,build,dist,*.egg-info,.git,__pycache__
+            --exclude=docs,build,dist,*.egg-info,.git,__pycache__,research
 
       - name: Check formatting with black
         run: |
@@ -60,7 +85,8 @@ jobs:
             3.DNO/src 3.DNO/demo.py \
             4.EPM/src 4.EPM/demo.py \
             5.PDI-GPT/src 5.PDI-GPT/demo.py \
-            agent.py run_all_demos.py verification.py
+            agent.py run_all_demos.py verification.py \
+            data_pipeline/ training/ integration/ evaluation/ tests/
 
   docs:
     runs-on: ubuntu-latest

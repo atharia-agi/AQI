@@ -1,0 +1,25 @@
+# AQI Configuration - Global Settings
+# Used by all frameworks for consistent configuration
+
+project:
+  name: "Artificial Quranic Intelligence"
+  version: "0.2.0-dev"
+  description: "AQI - Five revolutionary AI frameworks inspired by Islamic epistemology"
+
+paths:
+  data_root: "data"
+  models_root: "models"
+  logs_root: "logs"
+  checkpoints_root: "checkpoints"
+
+training:
+  device: "auto"  # auto, cpu, cuda, mps
+  seed: 42
+  num_workers: 4
+  mixed_precision: true
+  gradient_accumulation_steps: 1
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+  file: "logs/aqi.log"

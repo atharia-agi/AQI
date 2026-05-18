@@ -1,0 +1,24 @@
+# DNO Training Configuration
+# Divine Names Ontology
+
+model:
+  learn_weights: true
+  init_weights: [1.0, 1.0, 1.0, 0.8, 0.5, 0.3]
+  fairness_alpha: 0.5
+
+training:
+  batch_size: 32
+  epochs: 100
+  lr: 1.0e-2
+  scheduler: "cosine"
+
+data:
+  attributes: "data/asmaul_husna.json"
+  n_attributes: 6
+
+evaluation:
+  metrics:
+    - accuracy
+    - fairness_dp_diff
+    - weight_distribution
+    - attribute_balance

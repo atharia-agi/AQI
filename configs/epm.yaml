@@ -1,0 +1,22 @@
+# EPM Training Configuration
+# Eschatological Predictive Modeling
+
+model:
+  n_particles: 5000
+  alert_thresholds:
+    high: 0.7
+    moderate: 0.3
+    low: 0.1
+
+data:
+  signs: "data/signatures_of_the_hour.json"
+  evidence_sources:
+    - news_feeds
+    - social_media
+    - scholarly_reports
+
+evaluation:
+  metrics:
+    - posterior_accuracy
+    - sign_detection_rate
+    - false_positive_rate

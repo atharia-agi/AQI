@@ -1,0 +1,23 @@
+# PDI-GPT Training Configuration
+# Prophetic Dream Interpreter
+
+model:
+  narrative_templates:
+    - "You see {A} and then {B} appears, guiding you toward {C}."
+    - "In a field of {A}, you find {B} and feel {C}."
+    - "A {A} calls you to {B}, and you understand {C}."
+
+data:
+  symbols: "data/dream_symbols.json"
+  goals:
+    - guidance
+    - healing
+    - solution
+    - peace
+    - wealth
+
+evaluation:
+  metrics:
+    - symbol_match_rate
+    - narrative_coherence
+    - hadith_reference_accuracy

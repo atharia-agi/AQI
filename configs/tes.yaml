@@ -1,0 +1,28 @@
+# TES Training Configuration
+# Theological Embedding Space
+
+model:
+  embed_dim: 128
+  margin: 1.0
+  lambda_tier: 0.1
+  lambda_hier: 0.1
+
+training:
+  batch_size: 64
+  epochs: 100
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  scheduler: "cosine"
+  warmup_epochs: 5
+
+data:
+  tier_mapping: "data/asmaullah.json"
+  min_tier: 0
+  max_tier: 6
+
+evaluation:
+  eval_every: 10
+  metrics:
+    - tier_accuracy
+    - hierarchical_consistency
+    - ontological_correlation
